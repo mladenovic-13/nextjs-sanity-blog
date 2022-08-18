@@ -2,9 +2,23 @@ import { Transition } from "@headlessui/react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+
 const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
 
+  // const navbarItems = ["Home", "About Me", "Projects", "Contact Me", "Blog"];
+  interface INavbarItem {
+    title: string;
+    route: string;
+  }
+  const navbarItems = [
+    { title: "Home", route: "/" },
+    { title: "About Me", route: "/about" },
+    { title: "Projects", route: "/projects" },
+    { title: "Contact Me", route: "/contact" },
+    { title: "Blog", route: "/blog" },
+  ];
   return (
     <>
       <div
@@ -32,15 +46,18 @@ const Navbar = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="h-screen bg-gradient-to-bl from-primary-600  to-primary-900 flex flex-col justify-center  items-center">
+        <div className="h-screen bg-gradient-to-bl  from-primary-600 to-primary-900 flex flex-col justify-center  items-center">
           <div className="tracking-widest h-2/3 py-12 w-5/6 flex font-extralight flex-col justify-around text-white text-4xl text-center">
-            <div className="p-6 hover:bg-primary-900 border-b-2">Home</div>
-            <div className="p-6 hover:bg-primary-900 border-b-2">About Me</div>
-            <div className="p-6 hover:bg-primary-900 border-b-2">Projects</div>
-            <div className="p-6 hover:bg-primary-900 border-b-2">
-              Contact Me
-            </div>
-            <div className="p-6 hover:bg-primary-900 border-b-2">Blog</div>
+            {navbarItems.map((item: INavbarItem) => (
+              <Link key={item.title} href={item.route}>
+                <div
+                  onClick={() => setIsShowing((isShowing) => !isShowing)}
+                  className="p-6 hover:bg-primary-900"
+                >
+                  {item.title}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </Transition>
