@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticPropsContext, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
-import client from "../../client";
+import client from "../../sanity";
 import { Post } from "./types";
 
 interface PageProps {
@@ -31,7 +31,6 @@ interface ISlug extends ParsedUrlQuery {
 }
 
 export async function getStaticProps(context: GetStaticPropsContext) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params as ISlug;
   const post = await client.fetch(
     `
