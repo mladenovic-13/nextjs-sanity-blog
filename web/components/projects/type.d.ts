@@ -2,6 +2,6 @@ interface ProjectCardProps {
   title: string;
   desc: string;
   stack: string[];
-  githubLink?: string;
-  demoLink?: string;
+  githubLink: string;
+  demoLink: string;
 }

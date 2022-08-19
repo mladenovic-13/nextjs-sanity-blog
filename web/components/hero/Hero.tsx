@@ -5,7 +5,7 @@ import CTA from "../buttons/CTA";
 
 const Hero = () => {
   return (
-    <div className="pt-16 flex flex-col justify-between bg-primary-900">
+    <div className="pt-16 flex flex-col gap-6 md:flex-row  bg-primary-900">
       <div className="px-4 flex flex-col">
         <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
         <div className="pl-4 space-y-3 flex flex-col text-primary-100 text-5xl font-extralight tracking-wider">
@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
       </div>
       <CTA />
-      <div className="w-full mb-10">
+      <div className="w-full mb-10 relative">
         <Image
           className="z-10"
           src="/icons/hero.png"

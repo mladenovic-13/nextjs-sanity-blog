@@ -44,7 +44,7 @@ const Home: NextPage = () => {
         </div>
         <div
           ref={refProjectsSection}
-          className="mb-1 pt-16 pb-24 h-screen w-full snap-start snap-always flex bg-primary-600"
+          className="mb-1 py-16 h-screen w-full snap-start snap-always flex bg-primary-600"
         >
           <ProjectList />
         </div>
