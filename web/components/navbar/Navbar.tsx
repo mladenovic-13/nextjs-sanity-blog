@@ -8,7 +8,6 @@ import MenuIcon from "./MenuIcon";
 const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
 
-  // const navbarItems = ["Home", "About Me", "Projects", "Contact Me", "Blog"];
   interface INavbarItem {
     title: string;
     route: string;
