@@ -21,10 +21,10 @@ const Home: NextPage = () => {
   return (
     <div className="bg-primary-900 relative ">
       <Navbar />
-      <div className="snap-mandatory snap-y overflow-scroll h-screen w-screen">
+      <div className=" snap-mandatory snap-y overflow-scroll h-screen w-screen">
         <div
           ref={refHeroSection}
-          className="h-full snap-start snap-always flex relative w-full"
+          className="mb-2 h-screen snap-start snap-always flex relative w-full"
         >
           <Hero />
           <div className="text-primary-100 absolute bottom-28 -left-6 rotate-90 ">
@@ -38,13 +38,13 @@ const Home: NextPage = () => {
         </div>
         <div
           ref={refProjectsSection}
-          className="h-screen w-full snap-start snap-always flex bg-primary-100"
+          className="mb-2 h-screen w-full snap-start snap-always flex bg-primary-100"
         >
           <ProjectList />
         </div>
         <div
           ref={refBlogSection}
-          className="h-screen w-full snap-start snap-always flex bg-primary-900"
+          className="mb-2 h-screen w-full snap-start snap-always flex bg-primary-900"
         ></div>
         <div
           ref={refContactSection}
@@ -52,10 +52,7 @@ const Home: NextPage = () => {
         ></div>
       </div>
 
-      <div
-        id="indicators"
-        className="flex flex-col justify-evenly items-center absolute top-1/3 right-3 h-1/4 W-6"
-      >
+      <div className="flex flex-col justify-evenly items-center absolute top-1/3 right-3 h-1/4 W-6">
         <div
           className={`w-2 h-2 rounded-full bg-white ${
             isHeroOnScreen ? "scale-150" : ""
