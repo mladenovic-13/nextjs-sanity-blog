@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import CTA from "../buttons/CTA";
 
 const Hero = () => {
   return (
@@ -25,9 +26,7 @@ const Hero = () => {
           <p className="text-xs text-primary-300 italic">{"</p>"}</p>
         </div>
       </div>
-      <button className="text-primary-100 font-semibold mx-auto px-4 py-2 border-2 w-2/5 rounded-sm">
-        MY PROJECTS
-      </button>
+      <CTA />
       <div className="w-full mb-10">
         <Image
           className="z-10"
