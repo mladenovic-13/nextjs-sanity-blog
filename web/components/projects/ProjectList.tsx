@@ -43,7 +43,7 @@ const ProjectList = () => {
           <ProjectCard {...card} key={index} />
         ))}
       </div>
-      <p className="mt-3 text-primary-100 font-light tracking-widest text-center animate-bounce">
+      <p className="mt-3 text-primary-100 underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
         View More &gt;
       </p>
     </div>
