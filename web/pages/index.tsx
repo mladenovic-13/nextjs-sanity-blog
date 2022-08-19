@@ -7,8 +7,8 @@ const Home: NextPage = () => {
   return (
     <div className="bg-primary-900">
       <Navbar />
-      <div className="snap-mandatory snap-y snap-always overflow-scroll h-screen w-screen absolute inset-0">
-        <div className="h-screen snap-start flex relative w-full">
+      <div className="snap-mandatory snap-y snap-always overflow-scroll h-screen w-screen">
+        <div className="h-full snap-start flex relative w-full">
           <Hero />
           <div className="text-primary-100 absolute bottom-20 -left-6 rotate-90 ">
             {" "}
