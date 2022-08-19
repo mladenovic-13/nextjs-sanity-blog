@@ -3,11 +3,10 @@ import { MutableRefObject, useEffect, useRef } from "react";
 import Hero from "../components/hero/Hero";
 import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
+import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import useOnScreen from "../hooks/useOnScreen";
 
 const Home: NextPage = () => {
-  const refSections = useRef() as MutableRefObject<HTMLDivElement>;
-
   const refHeroSection = useRef() as MutableRefObject<HTMLDivElement>;
   const refProjectsSection = useRef() as MutableRefObject<HTMLDivElement>;
   const refBlogSection = useRef() as MutableRefObject<HTMLDivElement>;
@@ -17,6 +16,13 @@ const Home: NextPage = () => {
   const isProjectsOnScreen = useOnScreen(refProjectsSection);
   const isBlogOnScreen = useOnScreen(refBlogSection);
   const isContactOnScreen = useOnScreen(refContactSection);
+
+  const sectionProps = [
+    { ref: refHeroSection, isOnScreen: isHeroOnScreen },
+    { ref: refProjectsSection, isOnScreen: isProjectsOnScreen },
+    { ref: refBlogSection, isOnScreen: isBlogOnScreen },
+    { ref: refContactSection, isOnScreen: isContactOnScreen },
+  ];
 
   return (
     <div className="bg-primary-900 relative ">
@@ -52,28 +58,7 @@ const Home: NextPage = () => {
         ></div>
       </div>
 
-      <div className="flex flex-col justify-evenly items-center absolute top-1/3 right-3 h-1/4 W-6">
-        <div
-          className={`w-2 h-2 rounded-full bg-white ${
-            isHeroOnScreen ? "scale-150" : ""
-          }`}
-        ></div>
-        <div
-          className={`w-2 h-2 rounded-full bg-white ${
-            isProjectsOnScreen ? "scale-150" : ""
-          }`}
-        ></div>
-        <div
-          className={`w-2 h-2 rounded-full bg-white ${
-            isBlogOnScreen ? "scale-150" : ""
-          }`}
-        ></div>
-        <div
-          className={`w-2 h-2 rounded-full bg-white ${
-            isContactOnScreen ? "scale-150" : ""
-          }`}
-        ></div>
-      </div>
+      <ScrollCounter sections={sectionProps} />
     </div>
   );
 };
