@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { MutableRefObject, useEffect, useRef } from "react";
+import PostsList from "../components/blog/PostsList";
 import Hero from "../components/hero/Hero";
 import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
@@ -50,8 +51,10 @@ const Home: NextPage = () => {
         </div>
         <div
           ref={refBlogSection}
-          className="mb-1 h-screen w-full snap-start snap-always flex bg-primary-900"
-        ></div>
+          className="mb-1 py-16 h-screen w-full snap-start snap-always flex bg-primary-900"
+        >
+          <PostsList />
+        </div>
         <div
           ref={refContactSection}
           className="h-screen w-screen snap-start snap-always flex bg-primary-600 relative"
