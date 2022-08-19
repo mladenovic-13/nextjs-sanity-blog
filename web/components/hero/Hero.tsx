@@ -4,7 +4,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="px-4 pt-36 flex flex-col justify-between bg-primary-900">
+    <div className="px-4 pt-28 flex flex-col justify-between bg-primary-900">
       <div className="flex flex-col">
         <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
         <div className="pl-4 space-y-3 flex flex-col text-primary-100 text-5xl font-extralight tracking-wider">

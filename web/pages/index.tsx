@@ -10,11 +10,11 @@ const Home: NextPage = () => {
       <div className="snap-mandatory snap-y snap-always overflow-scroll h-screen w-screen">
         <div className="h-full snap-start flex relative w-full">
           <Hero />
-          <div className="text-primary-100 absolute bottom-20 -left-6 rotate-90 ">
+          <div className="text-primary-100 absolute bottom-24 -left-6 rotate-90 ">
             {" "}
             <div className="animate-pulse">scroll down -&gt;</div>
           </div>
-          <div className="text-primary-100 absolute bottom-20 -right-8 rotate-90 ">
+          <div className="text-primary-100 absolute bottom-24 -right-8 rotate-90 ">
             {" "}
             <div className="animate-pulse">scroll down -&gt;</div>
           </div>
