@@ -21,8 +21,19 @@ const Navbar = () => {
     { title: "Blog", route: "/blog" },
   ];
   return (
-    <div className="absolute top-0 right-0 w-screen h-screen">
-      <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
+    <div className="absolute top-0 right-0 w-screen h-screen z-50">
+      <div className="px-4 h-16 flex justify-between items-center">
+        <Link href="/">
+          <div onClick={() => setIsShowing(false)}>
+            <p className="text-xs text-primary-300 italic">{"<img>"}</p>
+            <h1 className="tracking-wider text-xl pl-4 text-primary-100 font-medium">
+              Mladenovic13
+            </h1>
+            <p className="text-xs text-primary-300 italic">{"</img>"}</p>
+          </div>
+        </Link>
+        <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
+      </div>
       <Transition
         show={isShowing}
         enter="transition ease-in-out duration-700 transform"
@@ -32,7 +43,7 @@ const Navbar = () => {
         leaveFrom="translate-y-0"
         leaveTo="-translate-y-full"
       >
-        <div className="h-screen bg-gradient-to-bl  from-primary-600 to-primary-900 flex flex-col justify-center  items-center">
+        <div className="h-[calc(100vh-4rem)] text-primary-100  bg-primary-900 flex flex-col justify-center  items-center">
           <div className="tracking-widest h-2/3 py-12 w-5/6 flex font-extralight flex-col justify-around text-white text-4xl text-center">
             {navbarItems.map((item: INavbarItem) => (
               <Link key={item.title} href={item.route}>

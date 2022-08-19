@@ -8,7 +8,7 @@ interface IconProps {
 const MenuIcon = ({ isShowing, setIsShowing }: IconProps) => {
   return (
     <div
-      className={`absolute top-6 right-6 w-10 h-5 flex flex-col items-center ${
+      className={`w-10 h-5 flex flex-col items-center ${
         !isShowing ? "justify-between" : ""
       }`}
       onClick={() => setIsShowing((isShowing) => !isShowing)}
