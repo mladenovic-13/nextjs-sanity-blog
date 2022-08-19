@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       <div className=" snap-mandatory snap-y overflow-scroll h-screen w-screen">
         <div
           ref={refHeroSection}
-          className="mb-2 h-screen snap-start snap-always flex relative w-full"
+          className="mb-1 h-screen snap-start snap-always flex relative w-full"
         >
           <Hero />
           <div className="text-primary-100 absolute bottom-28 -left-6 rotate-90 ">
@@ -44,13 +44,13 @@ const Home: NextPage = () => {
         </div>
         <div
           ref={refProjectsSection}
-          className="mb-2 h-screen w-full snap-start snap-always flex bg-primary-100"
+          className="mb-1 h-screen w-full snap-start snap-always flex bg-primary-100"
         >
           <ProjectList />
         </div>
         <div
           ref={refBlogSection}
-          className="mb-2 h-screen w-full snap-start snap-always flex bg-primary-900"
+          className="mb-1 h-screen w-full snap-start snap-always flex bg-primary-900"
         ></div>
         <div
           ref={refContactSection}

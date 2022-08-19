@@ -4,7 +4,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="pt-20 flex flex-col justify-between bg-primary-900">
+    <div className="pt-16 flex flex-col justify-between bg-primary-900">
       <div className="px-4 flex flex-col">
         <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
         <div className="pl-4 space-y-3 flex flex-col text-primary-100 text-5xl font-extralight tracking-wider">
@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
         </div>
         <p className="text-xs text-primary-300 italic">{"</h1>"}</p>
-        <div className="mt-4">
+        <div className="mt-1">
           <p className="text-xs text-primary-300 italic">{"<p>"}</p>
           <p className="pl-4 text-2xl font-light  text-gray-400">
             Full-stack Web Developer
@@ -28,7 +28,7 @@ const Hero = () => {
       <button className="text-primary-100 font-semibold mx-auto px-4 py-2 border-2 w-2/5 rounded-sm">
         MY PROJECTS
       </button>
-      <div className="w-full mb-6">
+      <div className="w-full mb-10">
         <Image
           className="z-10"
           src="/icons/hero.png"
