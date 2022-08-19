@@ -6,7 +6,7 @@ const ScrollCounter = ({ sections }: ScrollCounerProps) => {
       {sections.map((section, index) => (
         <div
           key={index}
-          className={`w-2 h-2 rounded-full bg-white ${
+          className={`w-2 h-2 rounded-full bg-gray-400 ${
             section.isOnScreen ? "scale-[1.6]" : ""
           }`}
           onClick={() =>
