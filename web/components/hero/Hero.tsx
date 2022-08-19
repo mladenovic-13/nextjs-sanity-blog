@@ -5,19 +5,21 @@ import CTA from "../buttons/CTA";
 
 const Hero = () => {
   return (
-    <div className="relative pt-16 flex flex-col gap-6 md:flex-row bg-primary-900">
-      <div className="px-4 flex flex-col">
-        <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
-        <div className="pl-4 space-y-3 flex flex-col text-primary-100 text-5xl font-extralight tracking-wider">
-          <p>Hi,</p>
-          <p>
-            <span className="font-semibold">I&apos;m </span>Nikola,
-          </p>
-          <p>
-            Web<span className="font-semibold"> Developer</span>.
-          </p>
+    <div className="relative h-full pt-16 flex flex-col md:flex-row bg-primary-900">
+      <div className="px-4 flex flex-col justify-around h-3/5">
+        <div>
+          <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
+          <div className="pl-4 space-y-3 flex flex-col text-primary-100 text-5xl font-extralight tracking-wider">
+            <p>Hi,</p>
+            <p>
+              <span className="font-semibold">I&apos;m </span>Nikola,
+            </p>
+            <p>
+              Web<span className="font-semibold"> Developer</span>.
+            </p>
+          </div>
+          <p className="text-xs text-primary-300 italic">{"</h1>"}</p>
         </div>
-        <p className="text-xs text-primary-300 italic">{"</h1>"}</p>
         <div className="mt-1">
           <p className="text-xs text-primary-300 italic">{"<p>"}</p>
           <p className="pl-4 text-2xl font-light  text-gray-400">
@@ -25,16 +27,10 @@ const Hero = () => {
           </p>
           <p className="text-xs text-primary-300 italic">{"</p>"}</p>
         </div>
+        <CTA />
       </div>
-      <CTA />
-      <div className="absolute bottom-0">
-        <Image
-          className="z-10"
-          src="/icons/hero.png"
-          alt="Hero Image"
-          width={600}
-          height={600}
-        />
+      <div className="relative w-full h-3/5">
+        <Image src="/icons/hero.png" alt="Hero Image" layout="fill" />
       </div>
     </div>
   );
