@@ -21,15 +21,13 @@ const Navbar = () => {
     { title: "Blog", route: "/blog" },
   ];
   return (
-    <div className="absolute top-0 right-0 w-screen z-50 bg-primary-900">
-      <div className="px-4 h-16 flex justify-between items-center">
+    <div className="absolute top-0 right-0 w-screen z-50 bg-primary-900 border-b-[1px]">
+      <div className="px-4 h-14 flex justify-between items-center">
         <Link href="/">
           <div onClick={() => setIsShowing(false)}>
-            <p className="text-xs text-primary-300 italic">{"<img>"}</p>
-            <h1 className="tracking-wider text-xl pl-4 text-primary-100 font-medium">
+            <h1 className="tracking-wider text-lg  text-primary-100 font-bold">
               Mladenovic13
             </h1>
-            <p className="text-xs text-primary-300 italic">{"</img>"}</p>
           </div>
         </Link>
         <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
@@ -43,8 +41,8 @@ const Navbar = () => {
         leaveFrom="translate-y-0"
         leaveTo="-translate-y-full"
       >
-        <div className="h-[calc(100vh-4rem)] text-primary-100  bg-primary-900 flex flex-col justify-center  items-center">
-          <div className="tracking-widest h-2/3 py-12 w-5/6 flex font-extralight flex-col justify-around text-white text-4xl text-center">
+        <div className=" text-primary-100  bg-primary-900 flex flex-col justify-center  items-center ">
+          <div className="tracking-widest h-2/3 py-16 w-5/6 flex font-extralight flex-col justify-around text-white text-4xl text-center">
             {navbarItems.map((item: INavbarItem) => (
               <Link key={item.title} href={item.route}>
                 <div
