@@ -21,7 +21,7 @@ const Navbar = () => {
     { title: "Blog", route: "/blog" },
   ];
   return (
-    <div className="absolute top-0 right-0 w-screen h-screen z-50">
+    <div className="absolute top-0 right-0 w-screen z-50 bg-primary-900">
       <div className="px-4 h-16 flex justify-between items-center">
         <Link href="/">
           <div onClick={() => setIsShowing(false)}>
