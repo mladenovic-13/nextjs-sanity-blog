@@ -29,16 +29,16 @@ const blogPosts: PostCard[] = [
 
 const PostsList = () => {
   return (
-    <div className="flex flex-col w-full  text-primary-900">
-      <h2 className="mb-2 text-center text-2xl text-primary-100 font-extralight">
+    <div className="flex flex-col justify-evenly w-full px-10   text-primary-900">
+      <h2 className="mb-2 text-center text-xl text-primary-100 font-extralight">
         Latest blog posts
       </h2>
-      <div className="gap-2 px-12 flex flex-col">
+      <div className="h-full flex flex-col justify-between">
         {blogPosts.map((post, index) => (
           <BlogPostCard key={index} {...post} />
         ))}
       </div>
-      <p className="mt-3 underline underline-offset-8 text-primary-100 font-light tracking-widest text-center animate-bounce">
+      <p className="mt-3 mb-2 underline underline-offset-8 text-primary-100 font-light tracking-widest text-center animate-bounce">
         View More &gt;
       </p>
     </div>

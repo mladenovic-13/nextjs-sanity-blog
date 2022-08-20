@@ -5,7 +5,7 @@ import CTA from "../buttons/CTA";
 
 const Hero = () => {
   return (
-    <div className="relative h-full pt-16 flex flex-col md:flex-row bg-primary-900">
+    <div className="relative h-full pt-2 flex flex-col md:flex-row bg-primary-900">
       <div className="px-4 flex flex-col justify-around h-3/5">
         <div>
           <p className="text-xs text-primary-300 italic">{"<h1>"}</p>

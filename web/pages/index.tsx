@@ -28,10 +28,10 @@ const Home: NextPage = () => {
   return (
     <div className="bg-primary-900 relative ">
       <Navbar />
-      <div className=" snap-mandatory snap-y overflow-scroll h-screen w-screen">
+      <div className="snap-mandatory snap-y overflow-scroll h-screen w-screen">
         <div
           ref={refHeroSection}
-          className="mb-[1px] h-screen snap-start snap-always flex relative w-full"
+          className="mb-[1px] pt-16 h-screen snap-start snap-always flex relative w-full"
         >
           <Hero />
           <div className="text-primary-100 absolute bottom-28 -left-6 rotate-90 ">

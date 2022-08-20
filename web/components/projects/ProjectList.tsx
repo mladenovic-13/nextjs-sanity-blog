@@ -5,7 +5,7 @@ const projectCards: ProjectCardProps[] = [
   {
     title: "Apartment Booking",
     desc: "Application for booking rooms and houses",
-    stack: ["NextJS", "TypeScript", "Styled Components"],
+    stack: ["NextJS", "TypeScript"],
     githubLink: "https://github.com/mladenovic-13/booking-app",
     demoLink: "https://booking-app-steel.vercel.app",
   },
@@ -19,14 +19,14 @@ const projectCards: ProjectCardProps[] = [
   {
     title: "Food Delivery",
     desc: "Food delivery application for customers and /admin roote for employees.",
-    stack: ["JavaScrip", "React", "Styled Components"],
+    stack: ["JavaScrip", "React"],
     demoLink: "https://delivery-app-mladenovic-13.vercel.app",
     githubLink: "https://github.com/mladenovic-13/delivery-app",
   },
   {
     title: "Admin Dashboard",
     desc: "Professional admin dashboard with Firebase Auth and CRUD functions.",
-    stack: ["Firebase", "TypeScript", "Styled Components"],
+    stack: ["Firebase", "TypeScript"],
     demoLink: "https://admin-dashboard-two-ochre.vercel.app",
     githubLink: "https://github.com/mladenovic-13/delivery-app",
   },
@@ -34,16 +34,16 @@ const projectCards: ProjectCardProps[] = [
 
 const ProjectList = () => {
   return (
-    <div className="flex flex-col">
-      <h2 className="mb-2 text-center text-2xl text-primary-100 font-extralight">
+    <div className="flex flex-col justify-evenly w-full px-10">
+      <h2 className="mb-2 text-center text-xl text-primary-100 font-extralight">
         Realised projects
       </h2>
-      <div className=" gap-2 px-12 flex flex-col">
+      <div className="h-full flex flex-col justify-evenly">
         {projectCards.map((card, index) => (
           <ProjectCard {...card} key={index} />
         ))}
       </div>
-      <p className="mt-3 text-primary-100 underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
+      <p className="mb-2 text-primary-100 underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
         View More &gt;
       </p>
     </div>
