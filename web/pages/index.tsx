@@ -28,12 +28,15 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div className="bg-primary-900">
+    <div>
       <Navbar />
       {/* Scroll Container */}
       <div className="section__container">
         {/* Section */}
-        <div ref={refHeroSection} className="section relative">
+        <div
+          ref={refHeroSection}
+          className="section relative bg-gradient-to-b from-primary-600 via-primary-600 to-primary-900"
+        >
           <Hero />
           <ScrollDown />
         </div>
