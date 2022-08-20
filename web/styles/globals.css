@@ -14,7 +14,7 @@
   }
 
   .section {
-    @apply mb-[1px] h-full snap-start snap-always flex;
+    @apply mb-[1px] h-full snap-start snap-always flex justify-center;
   }
 
   .card {
@@ -22,17 +22,26 @@
   }
 
   .section__heading {
-    @apply text-center text-xl font-extralight;
+    @apply text-center text-xl font-light;
+  }
+  .form__container {
+    @apply card p-4 flex flex-col justify-between  items-center h-3/5 bg-primary-900;
+  }
+
+  .form__input {
+    @apply outline-none w-full p-2 rounded-sm bg-inherit bg-primary-600 text-primary-100;
   }
 }
 
 @layer utilities {
   .list__cards {
-    @apply w-full h-[90%] px-10 py-6;
+    @apply h-[90%] w-[80%];
   }
+
   .space__cards {
     @apply h-full flex flex-col justify-evenly;
   }
+
   .view__more {
     @apply underline underline-offset-8  font-light tracking-widest text-center animate-bounce;
   }

@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { MutableRefObject, useEffect, useRef } from "react";
 import PostsList from "../components/blog/PostsList";
+import Contact from "../components/forms/Contact";
 import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
 import Navbar from "../components/navbar/Navbar";
@@ -48,7 +49,9 @@ const Home: NextPage = () => {
         </div>
 
         {/* Section */}
-        <div ref={refContactSection} className="section bg-primary-600"></div>
+        <div ref={refContactSection} className="section bg-primary-600">
+          <Contact />
+        </div>
       </div>
 
       <ScrollCounter sections={sectionProps} />
