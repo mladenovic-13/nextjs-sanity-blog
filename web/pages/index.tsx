@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         {/* Section */}
         <div
           ref={refHeroSection}
-          className="section relative bg-gradient-to-b from-primary-600 via-primary-600 to-primary-900"
+          className="section relative bg-gradient-to-b from-primary-600 via-primary-900 to-primary-900"
         >
           <Hero />
           <ScrollDown />
