@@ -25,11 +25,11 @@
     @apply text-center text-xl font-light;
   }
   .form__container {
-    @apply card p-4 flex flex-col justify-between  items-center h-3/5 bg-primary-900;
+    @apply flex flex-col justify-evenly items-center h-3/5;
   }
 
   .form__input {
-    @apply outline-none w-full p-2 rounded-sm bg-inherit bg-primary-600 text-primary-100;
+    @apply outline-none w-full p-2 rounded-sm bg-primary-900 text-primary-100;
   }
 }
 

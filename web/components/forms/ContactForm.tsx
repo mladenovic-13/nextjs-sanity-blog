@@ -33,11 +33,11 @@ const ContactForm = () => {
         name="message"
         id="input__message"
         cols={30}
-        rows={10}
+        rows={5}
         placeholder="Message"
       />
       <input
-        className="uppercase bg-primary-300 px-3 py-2 rounded-sm text-primary-100 font-semibold"
+        className="uppercase border-2 border-primary-900 px-3 py-2 rounded-md text-primary-100 font-semibold animate-pulse"
         type="submit"
         value="Send message"
       />

@@ -39,17 +39,26 @@ const Home: NextPage = () => {
         </div>
 
         {/* Section */}
-        <div ref={refProjectsSection} className="section bg-primary-600">
+        <div
+          ref={refProjectsSection}
+          className="section bg-gradient-to-b from-primary-900 via-primary-600 to-primary-600"
+        >
           <ProjectList />
         </div>
 
         {/* Section */}
-        <div ref={refBlogSection} className="section bg-primary-900">
+        <div
+          ref={refBlogSection}
+          className="section bg-gradient-to-b from-primary-600 via-primary-600 to-primary-900"
+        >
           <PostsList />
         </div>
 
         {/* Section */}
-        <div ref={refContactSection} className="section bg-primary-600">
+        <div
+          ref={refContactSection}
+          className="section bg-gradient-to-b from-primary-900 via-primary-600 to-primary-600"
+        >
           <Contact />
         </div>
       </div>
