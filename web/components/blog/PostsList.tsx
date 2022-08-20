@@ -30,13 +30,13 @@ const blogPosts: PostCard[] = [
 const PostsList = () => {
   return (
     <div className="list__cards">
-      <h2 className="section__heading">Latest blog posts</h2>
       <div className="space__cards text-primary-900">
+        <h2 className="section__heading text-primary-100">Latest blog posts</h2>
         {blogPosts.map((post, index) => (
           <BlogPostCard key={index} {...post} />
         ))}
+        <p className="view__more text-primary-100">View More &gt;</p>
       </div>
-      <p className="view__more">View More &gt;</p>
     </div>
   );
 };

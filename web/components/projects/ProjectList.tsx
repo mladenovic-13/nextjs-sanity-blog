@@ -35,15 +35,15 @@ const projectCards: ProjectCardProps[] = [
 const ProjectList = () => {
   return (
     <div className="list__cards">
-      <h2 className="section__heading ">Realised projects</h2>
       <div className="space__cards">
+        <h2 className="section__heading ">Realised projects</h2>
         {projectCards.map((card, index) => (
           <ProjectCard {...card} key={index} />
         ))}
+        <p className="mb-2  underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
+          View More &gt;
+        </p>
       </div>
-      <p className="mb-2  underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
-        View More &gt;
-      </p>
     </div>
   );
 };

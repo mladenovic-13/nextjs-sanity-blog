@@ -28,7 +28,7 @@
 
 @layer utilities {
   .list__cards {
-    @apply w-full h-[90%] px-10 py-6 flex flex-col;
+    @apply w-full h-[90%] px-10 py-6;
   }
   .space__cards {
     @apply h-full flex flex-col justify-evenly;
