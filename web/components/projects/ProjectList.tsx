@@ -16,13 +16,13 @@ const projectCards: ProjectCardProps[] = [
     demoLink: "https://www.floteq.com.au/",
     githubLink: "https://github.com/mladenovic-13/floteq-website",
   },
-  {
-    title: "Food Delivery",
-    desc: "Food delivery application for customers and /admin roote for employees.",
-    stack: ["JavaScrip", "React"],
-    demoLink: "https://delivery-app-mladenovic-13.vercel.app",
-    githubLink: "https://github.com/mladenovic-13/delivery-app",
-  },
+  // {
+  //   title: "Food Delivery",
+  //   desc: "Food delivery application for customers and /admin roote for employees.",
+  //   stack: ["JavaScrip", "React"],
+  //   demoLink: "https://delivery-app-mladenovic-13.vercel.app",
+  //   githubLink: "https://github.com/mladenovic-13/delivery-app",
+  // },
   {
     title: "Admin Dashboard",
     desc: "Professional admin dashboard with Firebase Auth and CRUD functions.",
