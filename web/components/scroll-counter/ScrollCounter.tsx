@@ -2,7 +2,7 @@ import React from "react";
 
 const ScrollCounter = ({ sections }: ScrollCounerProps) => {
   return (
-    <div className="flex flex-col justify-evenly items-center absolute top-1/3 right-4 h-1/4 W-6">
+    <div className="flex flex-col justify-evenly items-center absolute top-1/3 right-4 h-1/4">
       {sections.map((section, index) => (
         <div
           key={index}

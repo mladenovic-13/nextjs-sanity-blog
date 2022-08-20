@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import CTA from "../buttons/CTA";
@@ -6,7 +5,7 @@ import CTA from "../buttons/CTA";
 const Hero = () => {
   return (
     <div className="relative h-full pt-2 flex flex-col md:flex-row bg-primary-900">
-      <div className="px-4 flex flex-col justify-around h-2/5">
+      <div className="px-4 pt-12 flex flex-col justify-between h-3/5">
         <div>
           <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
           <div className="pl-4 space-y-3 flex flex-col  text-5xl font-extralight tracking-wider">
@@ -29,7 +28,7 @@ const Hero = () => {
         </div>
         <CTA />
       </div>
-      <div className="relative w-full h-3/5">
+      <div className="relative w-full h-2/3">
         <Image src="/icons/hero.png" alt="Hero Image" layout="fill" />
       </div>
     </div>

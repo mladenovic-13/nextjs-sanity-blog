@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { MutableRefObject, useEffect, useRef } from "react";
 import PostsList from "../components/blog/PostsList";
 import Hero from "../components/hero/Hero";
+import ScrollDown from "../components/hero/ScrollDown";
 import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
@@ -33,14 +34,7 @@ const Home: NextPage = () => {
         {/* Section */}
         <div ref={refHeroSection} className="section relative">
           <Hero />
-          <div className=" absolute bottom-1/4 -left-6 rotate-90 ">
-            {" "}
-            <div className="animate-pulse">scroll down -&gt;</div>
-          </div>
-          <div className=" absolute bottom-1/4 -right-8 rotate-90 ">
-            {" "}
-            <div className="animate-pulse">scroll down -&gt;</div>
-          </div>
+          <ScrollDown />
         </div>
 
         {/* Section */}
