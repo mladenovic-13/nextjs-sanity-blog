@@ -34,16 +34,14 @@ const projectCards: ProjectCardProps[] = [
 
 const ProjectList = () => {
   return (
-    <div className="flex flex-col justify-evenly w-full px-10">
-      <h2 className="mb-2 text-center text-xl text-primary-100 font-extralight">
-        Realised projects
-      </h2>
-      <div className="h-full flex flex-col justify-evenly">
+    <div className="list__cards">
+      <h2 className="section__heading ">Realised projects</h2>
+      <div className="space__cards">
         {projectCards.map((card, index) => (
           <ProjectCard {...card} key={index} />
         ))}
       </div>
-      <p className="mb-2 text-primary-100 underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
+      <p className="mb-2  underline underline-offset-8 font-light tracking-widest text-center animate-bounce">
         View More &gt;
       </p>
     </div>

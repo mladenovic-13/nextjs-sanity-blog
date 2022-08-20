@@ -11,7 +11,7 @@ const ProjectCard = ({
   githubLink,
 }: ProjectCardProps) => {
   return (
-    <div className=" text-primary-100 flex flex-col gap-2 px-4 py-2 bg-primary-900 rounded-md drop-shadow-2xl shadow-md shadow-primary-900">
+    <div className="card gap-2 px-4 py-2  bg-primary-900 shadow-primary-900">
       <div className="flex justify-between items-center">
         <FontAwesomeIcon
           icon={faFolderOpen}

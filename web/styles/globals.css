@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    color: theme("colors.primary-100");
+  }
+}
+
+@layer components {
+  .section__container {
+    @apply h-screen snap-mandatory snap-y overflow-scroll;
+  }
+
+  .section {
+    @apply mb-[1px] pt-14 h-screen snap-start snap-always;
+  }
+
+  .card {
+    @apply min-h-fit flex flex-col rounded-md drop-shadow-2xl shadow-md;
+  }
+
+  .section__heading {
+    @apply text-center text-xl font-extralight;
+  }
+}
+
+@layer utilities {
+  .list__cards {
+    @apply w-full h-full px-10 py-6 flex flex-col;
+  }
+  .space__cards {
+    @apply h-full flex flex-col justify-evenly;
+  }
+  .view__more {
+    @apply underline underline-offset-8  font-light tracking-widest text-center animate-bounce;
+  }
+}

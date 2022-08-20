@@ -26,39 +26,35 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div className="bg-primary-900 relative ">
+    <div className="container bg-primary-900">
       <Navbar />
-      <div className="snap-mandatory snap-y overflow-scroll h-screen w-screen">
-        <div
-          ref={refHeroSection}
-          className="mb-[1px] pt-16 h-screen snap-start snap-always flex relative w-full"
-        >
+      {/* Scroll Container */}
+      <div className="section__container">
+        {/* Section */}
+        <div ref={refHeroSection} className="section relative">
           <Hero />
-          <div className="text-primary-100 absolute bottom-28 -left-6 rotate-90 ">
+          <div className=" absolute bottom-1/4 -left-6 rotate-90 ">
             {" "}
             <div className="animate-pulse">scroll down -&gt;</div>
           </div>
-          <div className="text-primary-100 absolute bottom-28 -right-8 rotate-90 ">
+          <div className=" absolute bottom-1/4 -right-8 rotate-90 ">
             {" "}
             <div className="animate-pulse">scroll down -&gt;</div>
           </div>
         </div>
-        <div
-          ref={refProjectsSection}
-          className="mb-[1px] py-16 h-screen w-full snap-start snap-always flex bg-primary-600"
-        >
+
+        {/* Section */}
+        <div ref={refProjectsSection} className="section bg-primary-600">
           <ProjectList />
         </div>
-        <div
-          ref={refBlogSection}
-          className="mb-[1px] py-16 h-screen w-full snap-start snap-always flex bg-primary-900"
-        >
+
+        {/* Section */}
+        <div ref={refBlogSection} className="section bg-primary-900">
           <PostsList />
         </div>
-        <div
-          ref={refContactSection}
-          className="h-screen w-screen snap-start snap-always flex bg-primary-600 relative"
-        ></div>
+
+        {/* Section */}
+        <div ref={refContactSection} className="section bg-primary-600"></div>
       </div>
 
       <ScrollCounter sections={sectionProps} />
