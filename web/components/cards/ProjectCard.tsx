@@ -11,7 +11,7 @@ const ProjectCard = ({
   githubLink,
 }: ProjectCardProps) => {
   return (
-    <div className=" text-primary-100 flex flex-col gap-1 px-4 py-2 bg-primary-900 rounded-md drop-shadow-2xl shadow-md shadow-primary-900">
+    <div className=" text-primary-100 flex flex-col gap-2 px-4 py-2 bg-primary-900 rounded-md drop-shadow-2xl shadow-md shadow-primary-900">
       <div className="flex justify-between items-center">
         <FontAwesomeIcon
           icon={faFolderOpen}
@@ -38,7 +38,7 @@ const ProjectCard = ({
           </Link>
         </div>
       </div>
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col gap-2 justify-between h-full">
         <h2 className="font-semibold">{title}</h2>
         <p className="text-sm">{desc}</p>
         <ul>
