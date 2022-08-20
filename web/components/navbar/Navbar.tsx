@@ -1,9 +1,8 @@
 import { Transition } from "@headlessui/react";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import MenuIcon from "./MenuIcon";
+import SocialLinks from "../social/SocialLinks";
 
 const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -19,6 +18,14 @@ const Navbar = () => {
     { title: "Contact Me", route: "/contact" },
     { title: "Blog", route: "/blog" },
   ];
+
+  const socialLinks = {
+    instagram: "/",
+    github: "/",
+    linkedin: "/",
+    email: "/",
+  };
+
   return (
     <div className="">
       <div className="absolute top-4 right-4">
@@ -45,6 +52,7 @@ const Navbar = () => {
                 </div>
               </Link>
             ))}
+            <SocialLinks {...socialLinks} />
           </div>
         </div>
       </Transition>
