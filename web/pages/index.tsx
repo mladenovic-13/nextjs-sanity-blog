@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div className="container bg-primary-900">
+    <div className="bg-primary-900">
       <Navbar />
       {/* Scroll Container */}
       <div className="section__container">

@@ -10,11 +10,11 @@
 
 @layer components {
   .section__container {
-    @apply h-screen snap-mandatory snap-y overflow-scroll;
+    @apply fixed h-screen snap-mandatory snap-y overflow-scroll;
   }
 
   .section {
-    @apply mb-[1px] pt-14 h-screen snap-start snap-always;
+    @apply mb-[1px] h-screen snap-start snap-always;
   }
 
   .card {

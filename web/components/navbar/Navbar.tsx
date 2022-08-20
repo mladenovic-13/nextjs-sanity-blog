@@ -20,13 +20,8 @@ const Navbar = () => {
     { title: "Blog", route: "/blog" },
   ];
   return (
-    <div className="fixed top-0 right-0 w-screen z-50 bg-primary-900 border-b-[1px]">
-      <div className="px-4 h-14 flex justify-between items-center">
-        <Link href="/">
-          <div onClick={() => setIsShowing(false)}>
-            <h1 className="tracking-wider text-lg   font-bold">Mladenovic13</h1>
-          </div>
-        </Link>
+    <div className="">
+      <div className="absolute top-3 right-3">
         <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
       </div>
       <Transition
@@ -38,7 +33,7 @@ const Navbar = () => {
         leaveFrom="translate-y-0"
         leaveTo="-translate-y-full"
       >
-        <div className="   bg-primary-900 flex flex-col justify-center  items-center ">
+        <div className="w-full h-screen bg-primary-900 flex flex-col justify-center  items-center z-50">
           <div className="tracking-widest h-2/3 py-16 w-5/6 flex font-extralight flex-col justify-around text-white text-4xl text-center">
             {navbarItems.map((item: INavbarItem) => (
               <Link key={item.title} href={item.route}>
