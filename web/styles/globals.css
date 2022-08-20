@@ -22,7 +22,7 @@
   }
 
   .section__heading {
-    @apply text-center text-xl font-light;
+    @apply uppercase text-center text-2xl font-light;
   }
   .form__container {
     @apply flex flex-col justify-evenly items-center h-3/5;

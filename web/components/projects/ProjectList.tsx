@@ -36,7 +36,7 @@ const ProjectList = () => {
   return (
     <div className="list__cards">
       <div className="space__cards">
-        <h2 className="section__heading ">Realised projects</h2>
+        <h2 className="section__heading ">latest projects</h2>
         {projectCards.map((card, index) => (
           <ProjectCard {...card} key={index} />
         ))}

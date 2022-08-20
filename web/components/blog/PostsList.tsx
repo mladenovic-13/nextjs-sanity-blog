@@ -31,7 +31,7 @@ const PostsList = () => {
   return (
     <div className="list__cards">
       <div className="space__cards text-primary-900">
-        <h2 className="section__heading text-primary-100">Latest blog posts</h2>
+        <h2 className="section__heading text-primary-100">latest posts</h2>
         {blogPosts.map((post, index) => (
           <BlogPostCard key={index} {...post} />
         ))}
