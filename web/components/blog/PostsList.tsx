@@ -37,17 +37,18 @@ const PostsList = () => {
 
   return (
     <div className="list__cards text-primary-900 flex flex-col justify-evenly items-center">
-      <h2 className="section__heading text-primary-100">latest posts</h2>
+      <h2 className="section__heading text-primary-100">blog posts</h2>
       <Tab.Group>
-        <Tab.List className="flex w-full space-x-1 rounded-xl p-1">
+        <Tab.List className="flex w-full space-x-1 rounded-3xl p-1 bg-primary-900">
           {Object.keys(categories).map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
-                  "ring-white ring-opacity-60 ring-offset-2",
-                  selected ? "bg-primary-100  shadow" : "text-primary-100"
+                  "w-full rounded-3xl py-2.5 text-sm font-medium leading-5",
+                  selected
+                    ? "bg-primary-100  shadow-md shadow-primary-600 outline-none transition ease-in duration-300"
+                    : "text-primary-100"
                 )
               }
             >
@@ -61,8 +62,8 @@ const PostsList = () => {
               key={idx}
               className="flex flex-col justify-between h-full"
             >
-              {posts.map((post) => (
-                <BlogPostCard key={post.id} {...post} />
+              {posts.map((post, idx) => (
+                <BlogPostCard key={idx} {...post} />
               ))}
             </Tab.Panel>
           ))}

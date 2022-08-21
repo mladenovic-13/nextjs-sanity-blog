@@ -18,7 +18,7 @@
   }
 
   .card {
-    @apply min-h-fit flex flex-col rounded-md drop-shadow-2xl shadow-md;
+    @apply min-h-fit flex flex-col rounded-2xl drop-shadow-2xl shadow-md;
   }
 
   .section__heading {

@@ -20,7 +20,7 @@ const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
       </div>
       <div className="rounded-md relative h-[90%] w-full">
         <Image
-          className="rounded-b-md"
+          className="rounded-b-2xl"
           src={imgURL}
           layout="fill"
           objectFit="cover"
