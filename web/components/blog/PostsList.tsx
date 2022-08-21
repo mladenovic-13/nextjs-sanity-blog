@@ -37,7 +37,7 @@ const PostsList = () => {
 
   return (
     <div className="list__cards text-primary-900 flex flex-col justify-evenly items-center">
-      <h2 className="section__heading text-primary-100">blog posts</h2>
+      <h2 className="section__heading text-primary-100 md:py-5">blog posts</h2>
       <Tab.Group>
         <Tab.List className="flex w-full space-x-1 rounded-3xl p-1 bg-primary-900">
           {Object.keys(categories).map((category) => (
@@ -61,7 +61,7 @@ const PostsList = () => {
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel
               key={idx}
-              className="flex flex-col justify-between h-full"
+              className="flex flex-col justify-between h-full md:flex-row md:gap-5 md:py-10"
             >
               {posts.map((post, idx) => (
                 <BlogPostCard key={idx} {...post} />

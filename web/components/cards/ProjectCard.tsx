@@ -11,7 +11,7 @@ const ProjectCard = ({
   githubLink,
 }: ProjectCardProps) => {
   return (
-    <div className="h-1/4 card gap-[5%] px-4 py-2  bg-primary-900 shadow-primary-900">
+    <div className="h-1/4 card gap-[5%] px-4 py-2  bg-primary-900 shadow-primary-900 md:h-2/3 md:w-[30%]">
       <div className="flex justify-between items-center">
         <FontAwesomeIcon
           icon={faFolderOpen}
@@ -38,12 +38,15 @@ const ProjectCard = ({
           </Link>
         </div>
       </div>
-      <div className="flex flex-col justify-between h-full">
-        <h2 className="font-semibold">{title}</h2>
-        <p className="text-sm">{desc}</p>
+      <div className="flex flex-col justify-between h-full md:text-center">
+        <h2 className="font-semibold md:text-xl">{title}</h2>
+        <p className="text-sm md:text-base">{desc}</p>
         <ul>
           {stack.map((item, index) => (
-            <li className="inline mr-1 text-xs text-gray-400" key={index}>
+            <li
+              className="inline mr-1 text-xs md:text-sm text-gray-400"
+              key={index}
+            >
               {item}
             </li>
           ))}

@@ -28,7 +28,10 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="absolute top-4 right-4">
+      <div
+        onClick={() => setIsShowing((isShowing) => !isShowing)}
+        className="absolute top-[2%] right-[4%] md:p-3 hover:bg-primary-600 rounded-xl z-50"
+      >
         <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
       </div>
       <Transition
@@ -41,7 +44,7 @@ const Navbar = () => {
         leaveTo="-translate-y-full"
       >
         <div className=" w-full h-screen bg-primary-900 flex flex-col justify-center  items-center">
-          <div className="tracking-widest h-2/3 py-16 w-5/6 flex font-extralight flex-col justify-around text-white text-4xl text-center">
+          <div className="tracking-widest h-2/3 py-16 w-5/6 md:max-w-sm flex font-extralight flex-col justify-around text-white text-4xl text-center">
             {navbarItems.map((item: INavbarItem) => (
               <Link key={item.title} href={item.route}>
                 <div
