@@ -14,7 +14,7 @@
   }
 
   .section {
-    @apply mb-[1px] h-full snap-start snap-always flex justify-center;
+    @apply mb-[1px] h-full snap-start snap-always flex justify-center items-center;
   }
 
   .card {

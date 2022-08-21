@@ -5,7 +5,7 @@ import { PostCard } from "../blog/type";
 
 const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
   return (
-    <div className="card justify-between bg-primary-100 shadow-primary-600 relative">
+    <div className="h-1/4 card justify-between bg-primary-100 shadow-primary-600 relative">
       <div className="px-4 py-1 flex justify-between">
         <h2 className="font-semibold tracking-wider">{title}</h2>
         <Link href={postURL}>
@@ -18,13 +18,13 @@ const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
           </svg>
         </Link>
       </div>
-      <div className="rounded-md relative">
+      <div className="rounded-md relative h-[90%] w-full">
         <Image
           className="rounded-b-md"
           src={imgURL}
-          width={400}
-          height={200}
-          layout="responsive"
+          // width={400}
+          // height={200}
+          layout="fill"
           objectFit="cover"
           alt={`"${title}" blog post image`}
         />
