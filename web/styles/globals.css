@@ -10,16 +10,22 @@
 }
 
 @layer components {
+  .mobile {
+    @apply md:hidden;
+  }
+  .desktop {
+    @apply hidden md:block;
+  }
   .main__container {
-    @apply absolute inset-0 w-screen h-screen bg-primary-900;
+    @apply w-screen h-screen bg-primary-900;
   }
   .section__container {
     @apply fixed h-screen snap-mandatory snap-y overflow-scroll;
     @apply md:w-screen;
   }
-
+  /* */
   .section {
-    @apply mb-[1px] h-full snap-start snap-always flex justify-center items-center;
+    @apply mb-[0.5px] h-full snap-start snap-always flex justify-center items-center;
     @apply md:flex-row;
   }
 
@@ -42,12 +48,11 @@
 @layer utilities {
   .list__cards {
     @apply h-[90%] w-[80%];
-    @apply md:flex md:flex-col md:justify-evenly;
   }
 
   .space__cards {
     @apply h-full flex flex-col justify-evenly;
-    @apply md:flex-row md:h-4/5 md:items-center;
+    @apply md:flex-row md:items-center;
   }
 
   .view__more {

@@ -34,19 +34,38 @@ const projectCards: ProjectCardProps[] = [
 
 const ProjectList = () => {
   return (
-    <div className="list__cards">
-      <h1 className="hidden md:block text-center text-3xl font-extralight uppercase">
-        projects
-      </h1>
-      <div className="space__cards ">
-        <h2 className="section__heading md:hidden">latest projects</h2>
-        {projectCards.map((card, index) => (
-          <ProjectCard {...card} key={index} />
-        ))}
-        <p className="view__more mb-2 md:hidden">View More &gt;</p>
+    <>
+      {/* MOBILE */}
+      <div className="mobile list__cards">
+        <div className="space__cards ">
+          <h2 className="section__heading">projects</h2>
+          {projectCards.map((card, index) => (
+            <ProjectCard {...card} key={index} />
+          ))}
+          <p className="view__more mb-2">View More &gt;</p>
+        </div>
       </div>
-      <p className="view__more hidden mb-2 md:block">View More &gt;</p>
-    </div>
+
+      {/* DESKTOP */}
+      <div className="desktop md:flex flex-col gap-10 justify-evenly h-[95%] w-[95%]">
+        <h1 className="text-center text-3xl font-extralight uppercase">
+          projects
+        </h1>
+        <div className="flex flex-row flex-wrap flex-1 justify-center gap-4">
+          {projectCards.map((card, index) => (
+            <div key={index} className="w-[30%] h-[47%]">
+              <ProjectCard {...card} />
+            </div>
+          ))}
+          {projectCards.map((card, index) => (
+            <div key={index} className="w-[30%] h-[47%]">
+              <ProjectCard {...card} />
+            </div>
+          ))}
+        </div>
+        <p className="view__more s">View More &gt;</p>
+      </div>
+    </>
   );
 };
 
