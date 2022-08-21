@@ -30,7 +30,7 @@ const Navbar = () => {
     <div className="">
       <div
         onClick={() => setIsShowing((isShowing) => !isShowing)}
-        className="absolute top-[2%] right-[4%] md:p-3 hover:bg-primary-600 rounded-xl z-50"
+        className="absolute top-[2%] right-[4%] md:p-3 md:hover:bg-primary-600 rounded-xl z-50"
       >
         <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
       </div>
