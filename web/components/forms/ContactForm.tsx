@@ -1,12 +1,12 @@
-import React from "react";
+import React, { FormEvent } from "react";
 
 const ContactForm = () => {
-  const onSubmit = (e: SubmitEvent) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
   return (
-    <form className="form__container">
+    <form className="form__container" onSubmit={(e) => onSubmit(e)}>
       <input
         className="form__input"
         type="text"

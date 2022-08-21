@@ -22,8 +22,6 @@ const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
         <Image
           className="rounded-b-md"
           src={imgURL}
-          // width={400}
-          // height={200}
           layout="fill"
           objectFit="cover"
           alt={`"${title}" blog post image`}

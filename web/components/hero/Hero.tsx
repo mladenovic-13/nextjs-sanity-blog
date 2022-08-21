@@ -5,9 +5,8 @@ import CTA from "../buttons/CTA";
 const Hero = () => {
   return (
     <div className="relative h-full pt-2 flex flex-col md:flex-row">
-      <div className="px-4 pt-10 flex flex-col justify-between h-3/5">
-        <div>
-          <p className="text-xs text-primary-300 italic">{"<h1>"}</p>
+      <div className="px-4 flex flex-col justify-center h-[55%]">
+        <div className="flex flex-col justify-evenly  h-[90%]">
           <div className="pl-4 space-y-3 flex flex-col  text-5xl font-extralight tracking-wider">
             <p>Hi,</p>
             <p>
@@ -17,19 +16,16 @@ const Hero = () => {
               Web<span className="font-semibold"> Developer</span>.
             </p>
           </div>
-          <p className="text-xs text-primary-300 italic">{"</h1>"}</p>
+          <div className="mt-1">
+            <p className="pl-4 text-2xl font-light  text-gray-400">
+              Full-stack Web Developer
+            </p>
+          </div>
+          <CTA />
         </div>
-        <div className="mt-1">
-          <p className="text-xs text-primary-300 italic">{"<p>"}</p>
-          <p className="pl-4 text-2xl font-light  text-gray-400">
-            Full-stack Web Developer
-          </p>
-          <p className="text-xs text-primary-300 italic">{"</p>"}</p>
-        </div>
-        <CTA />
       </div>
-      <div className="relative w-full h-2/3">
-        <Image src="/icons/hero.png" alt="Hero Image" layout="fill" />
+      <div className="relative w-full h-[45%]">
+        <Image priority src="/icons/hero.png" alt="Hero Image" layout="fill" />
       </div>
     </div>
   );
