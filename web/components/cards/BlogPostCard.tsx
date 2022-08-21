@@ -18,7 +18,7 @@ const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
           </svg>
         </Link>
       </div>
-      <div className="rounded-md relative h-[90%] w-full">
+      <div className="rounded-b-2xl relative h-[90%] w-full">
         <Image
           className="rounded-b-2xl"
           src={imgURL}
@@ -27,7 +27,7 @@ const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
           alt={`"${title}" blog post image`}
         />
       </div>
-      <p className="text-sm absolute bottom-0 px-4 py-2 bg-primary-300 bg-opacity-20">
+      <p className="text-sm absolute bottom-0 px-4 py-2 rounded-b-2xl bg-primary-300 bg-opacity-20">
         {desc}
       </p>
     </div>

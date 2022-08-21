@@ -2,7 +2,7 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <button className=" font-semibold mx-auto px-4 py-2 border-2 rounded-md animate-pulse">
+    <button className="mx-auto px-4 py-2 border-[1px] rounded-3xl animate-pulse">
       MY PROJECTS
     </button>
   );

@@ -46,8 +46,9 @@ const PostsList = () => {
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-3xl py-2.5 text-sm font-medium leading-5",
+
                   selected
-                    ? "bg-primary-100  shadow-md shadow-primary-600 outline-none transition ease-in duration-300"
+                    ? "bg-primary-100 outline-none transition ease-in duration-300  "
                     : "text-primary-100"
                 )
               }

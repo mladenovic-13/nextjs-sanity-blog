@@ -37,7 +37,7 @@ const ContactForm = () => {
         placeholder="Message"
       />
       <input
-        className="uppercase border-2 border-primary-900 px-3 py-2 rounded-md text-primary-100 font-semibold animate-pulse"
+        className="uppercase border-[1px] border-white px-4 py-2 rounded-3xl text-primary-100 animate-pulse"
         type="submit"
         value="Send message"
       />

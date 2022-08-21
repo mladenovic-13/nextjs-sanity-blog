@@ -5,6 +5,7 @@
 @layer base {
   html {
     color: theme("colors.primary-100");
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -29,7 +30,7 @@
   }
 
   .form__input {
-    @apply outline-none w-full p-2 rounded-sm bg-primary-900 text-primary-100;
+    @apply outline-none w-full py-2 px-4 rounded-3xl bg-primary-900 text-primary-100;
   }
 }
 
