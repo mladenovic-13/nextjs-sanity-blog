@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BlogPostCard from "../cards/BlogPostCard";
 import { PostCard } from "./type";
 import { Tab } from "@headlessui/react";
-import { postsData } from "../../utils/PostsData";
+import { postsData } from "../../utils/postsData";
 
 const blogPosts: PostCard[] = [
   {
