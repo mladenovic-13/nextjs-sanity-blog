@@ -2,17 +2,22 @@ import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
 import { GetStaticProps } from "next";
-import Image from "next/image";
 import { ParsedUrlQuery } from "querystring";
+import { ReactElement } from "react";
+import Layout from "../../components/layout/Layout";
+import { NextPageWithLayout } from "../_app";
 
 // The page for each post
-
-const Post = ({ frontmatter, content }: any) => {
+const Post: NextPageWithLayout = ({ frontmatter, content }: any) => {
   const { title, author, category, date, bannerImage, tags } = frontmatter;
   return (
     <div className="flex justify-center">
       <main className="prose">
-        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: md().render(content),
+          }}
+        />
       </main>
     </div>
   );
@@ -52,4 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
+Post.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
 export default Post;

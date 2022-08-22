@@ -1,15 +1,17 @@
+import { NextPage } from "next";
 import { MutableRefObject, ReactElement, useEffect, useRef } from "react";
 import PostsList from "../components/blog/PostsList";
 import Contact from "../components/forms/Contact";
 import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
 import Layout from "../components/layout/Layout";
+import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import useOnScreen from "../hooks/useOnScreen";
 import { NextPageWithLayout } from "./_app";
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPage = () => {
   const refHeroSection = useRef() as MutableRefObject<HTMLDivElement>;
   const refProjectsSection = useRef() as MutableRefObject<HTMLDivElement>;
   const refBlogSection = useRef() as MutableRefObject<HTMLDivElement>;
@@ -29,6 +31,7 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <div className="main__container">
+      <Navbar />
       {/* Scroll Container */}
       <div className="section__container">
         {/* Section */}
@@ -68,10 +71,6 @@ const Home: NextPageWithLayout = () => {
       <ScrollCounter sections={sectionProps} />
     </div>
   );
-};
-
-Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
 };
 
 export default Home;

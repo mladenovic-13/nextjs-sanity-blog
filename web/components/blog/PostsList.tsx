@@ -1,32 +1,7 @@
 import React, { useState } from "react";
 import BlogPostCard from "../cards/BlogPostCard";
-import { PostCard } from "./type";
 import { Tab } from "@headlessui/react";
 import { postsData } from "../../utils/postsData";
-
-const blogPosts: PostCard[] = [
-  {
-    title: "Title",
-    desc: "This is some random blog post description. Doesn't mean anything.",
-    imgURL:
-      "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-    postURL: "",
-  },
-  {
-    title: "Title",
-    desc: "This is some random blog post description. Doesn't mean anything.",
-    imgURL:
-      "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-    postURL: "",
-  },
-  {
-    title: "Title",
-    desc: "This is some random blog post description. Doesn't mean anything.",
-    imgURL:
-      "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-    postURL: "",
-  },
-];
 
 const PostsList = () => {
   let [categories] = useState(postsData);

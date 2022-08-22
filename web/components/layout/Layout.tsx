@@ -8,7 +8,7 @@ interface ILayout {
 const Layout: React.FC<ILayout> = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <h1>LAYOUT </h1>
       {children}
     </>
   );

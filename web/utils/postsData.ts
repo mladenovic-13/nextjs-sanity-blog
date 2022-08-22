@@ -1,5 +1,5 @@
 export const postsData = {
-  Recent: [
+  CS: [
     {
       id: 1,
       title: "Recent",
@@ -25,7 +25,7 @@ export const postsData = {
       postURL: "",
     },
   ],
-  Popular: [
+  CSS: [
     {
       id: 1,
       title: "Popular",
@@ -51,7 +51,7 @@ export const postsData = {
       postURL: "",
     },
   ],
-  Trending: [
+  JavaScript: [
     {
       id: 1,
       title: "Trending",
