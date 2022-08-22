@@ -39,13 +39,13 @@ const PostsList = () => {
     <div className="list__cards text-primary-900 flex flex-col justify-evenly items-center">
       <h2 className="section__heading text-primary-100 md:py-5">blog posts</h2>
       <Tab.Group>
-        <Tab.List className="flex w-full space-x-1 rounded-3xl p-1 bg-primary-900">
+        <Tab.List className="flex w-full md:w-1/2 space-x-1 rounded-3xl p-1 bg-primary-900">
           {Object.keys(categories).map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "w-full rounded-3xl py-2.5 text-sm font-medium leading-5",
+                  "w-full rounded-3xl py-2.5  md:py-1.5 text-sm font-medium leading-5",
 
                   selected
                     ? "bg-primary-100 outline-none transition ease-in duration-300  "

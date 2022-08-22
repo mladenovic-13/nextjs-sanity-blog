@@ -1,48 +1,62 @@
-import { GetStaticPaths, GetStaticPropsContext, NextPage } from "next";
+import fs from "fs";
+import matter from "gray-matter";
+import md from "markdown-it";
+import { GetStaticProps } from "next";
+import Image from "next/image";
 import { ParsedUrlQuery } from "querystring";
-import client from "../../sanity";
-import { Post } from "./types";
 
-interface PageProps {
-  post: Post;
-}
+// The page for each post
 
-const Post: NextPage<PageProps> = ({ post }) => {
+const Post = ({ frontmatter, content }: any) => {
+  const { title, author, category, date, bannerImage, tags } = frontmatter;
   return (
-    <article>
-      <h1>{post?.slug?.current}</h1>
-    </article>
+    <div className="flex justify-center">
+      <main className="prose">
+        <h1>{title}</h1>
+        <h2>
+          {author} || {date}
+        </h2>
+        <h3>
+          {category} || {tags.join()}
+        </h3>
+        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+      </main>
+    </div>
   );
 };
 
-export async function getStaticPaths() {
-  const paths = await client.fetch(
-    `*[_type == "post" && defined(slug.current)][].slug.current`
-  );
+export const getStaticPaths = async () => {
+  // Get list of all files from our posts directory
+  const files = fs.readdirSync("posts");
+  // Generate a path for each one
+  const paths = files.map((fileName) => ({
+    params: {
+      slug: fileName.replace(".md", ""),
+    },
+  }));
 
+  // Return list of paths
   return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
+    paths,
+    fallback: false,
   };
-}
+};
 
-interface ISlug extends ParsedUrlQuery {
+interface IParams extends ParsedUrlQuery {
   slug: string;
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const { slug = "" } = context.params as ISlug;
-  const post = await client.fetch(
-    `
-    *[_type == "post" && slug.current == $slug][0]
-  `,
-    { slug }
-  );
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug } = context.params as IParams;
+  const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
+  const { data: frontmatter, content } = matter(fileName);
+
   return {
     props: {
-      post,
+      frontmatter,
+      content,
     },
   };
-}
+};
 
 export default Post;
