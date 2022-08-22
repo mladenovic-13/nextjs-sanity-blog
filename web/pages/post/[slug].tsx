@@ -12,13 +12,6 @@ const Post = ({ frontmatter, content }: any) => {
   return (
     <div className="flex justify-center">
       <main className="prose">
-        <h1>{title}</h1>
-        <h2>
-          {author} || {date}
-        </h2>
-        <h3>
-          {category} || {tags.join()}
-        </h3>
         <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
       </main>
     </div>
