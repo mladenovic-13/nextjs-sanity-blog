@@ -1,15 +1,14 @@
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 import { MutableRefObject, ReactElement, useEffect, useRef } from "react";
 import PostsList from "../components/blog/PostsList";
 import Contact from "../components/forms/Contact";
 import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
-import Layout from "../components/layout/Layout";
+import MainMask from "../components/mask/MainMask";
 import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import useOnScreen from "../hooks/useOnScreen";
-import { NextPageWithLayout } from "./_app";
 
 const Home: NextPage = () => {
   const refHeroSection = useRef() as MutableRefObject<HTMLDivElement>;
@@ -37,33 +36,28 @@ const Home: NextPage = () => {
         {/* Section */}
         <div
           ref={refHeroSection}
-          className="section relative bg-gradient-to-b from-primary-600 via-primary-900 to-primary-900"
+          className="section relative bg-gradient-to-b bg-slate-900"
         >
+          <MainMask />
           <Hero />
           <ScrollDown />
         </div>
 
         {/* Section */}
-        <div
-          ref={refProjectsSection}
-          className="section bg-gradient-to-b from-primary-900 via-primary-600 to-primary-600"
-        >
+        <div ref={refProjectsSection} className="section">
+          <MainMask />
           <ProjectList />
         </div>
 
         {/* Section */}
-        <div
-          ref={refBlogSection}
-          className="section bg-gradient-to-b from-primary-600 via-primary-600 to-primary-900"
-        >
+        <div ref={refBlogSection} className="section">
+          <MainMask />
           <PostsList />
         </div>
 
         {/* Section */}
-        <div
-          ref={refContactSection}
-          className="section bg-gradient-to-b from-primary-900 via-primary-600 to-primary-600"
-        >
+        <div ref={refContactSection} className="section">
+          <MainMask />
           <Contact />
         </div>
       </div>

@@ -12,7 +12,7 @@ const Post: NextPageWithLayout = ({ frontmatter, content }: any) => {
   const { title, author, category, date, bannerImage, tags } = frontmatter;
   return (
     <div className="flex justify-center">
-      <main className="prose">
+      <main className="prose prose-invert prose-img:rounded-xl">
         <div
           dangerouslySetInnerHTML={{
             __html: md().render(content),

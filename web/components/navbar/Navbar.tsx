@@ -1,4 +1,4 @@
-import { Transition } from "@headlessui/react";
+import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import Link from "next/link";
 import MenuIcon from "./MenuIcon";
@@ -30,35 +30,52 @@ const Navbar = () => {
     <div className="">
       <div
         onClick={() => setIsShowing((isShowing) => !isShowing)}
-        className="absolute top-[2%] right-[4%] md:p-3 md:hover:bg-primary-600 rounded-xl z-50"
+        className="absolute top-[2%] right-[4%] md:p-3 rounded-xl z-50"
       >
         <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
       </div>
-      <Transition
-        show={isShowing}
-        enter="transition ease-in-out duration-700 transform"
-        enterFrom="-translate-y-full"
-        enterTo="translate-y-0"
-        leave="transition ease-in-out duration-300 transform"
-        leaveFrom="translate-y-0"
-        leaveTo="-translate-y-full"
-      >
-        <div className=" w-full h-screen bg-primary-900 flex flex-col justify-center  items-center">
-          <div className="tracking-widest h-2/3 py-16 w-5/6 md:max-w-sm flex font-extralight flex-col justify-around text-white text-4xl text-center">
-            {navbarItems.map((item: INavbarItem) => (
-              <Link key={item.title} href={item.route}>
-                <div
-                  onClick={() => setIsShowing((isShowing) => !isShowing)}
-                  className="p-6 hover:bg-primary-900"
-                >
-                  {item.title}
+      <Dialog open={isShowing} onClose={() => setIsShowing(false)}>
+        <div
+          className="fixed inset-0 bg-slate-800/80 backdrop-blur"
+          aria-hidden="true"
+        />
+        <Dialog.Panel>
+          <div className="fixed top-[1.5%] right-[3%] w-2/3 lg:w-1/4 xl:w-1/5 py-3 flex flex-col items-start  bg-slate-900/70 rounded-md">
+            <div
+              onClick={() => setIsShowing((prev) => !prev)}
+              className="absolute right-[3%] top-[3%]"
+            >
+              <svg
+                className="fill-slate-100 w-7 h-7"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div className="w-full px-6 tracking-wider flex flex-col justify-around text-xl ">
+              {navbarItems.map((item: INavbarItem) => (
+                <div key={item.title} className="py-1">
+                  <div onClick={() => setIsShowing((isShowing) => !isShowing)}>
+                    <Link
+                      className="focus:outline-none focus:shadow-none"
+                      href={item.route}
+                    >
+                      {item.title}
+                    </Link>
+                  </div>
                 </div>
-              </Link>
-            ))}
-            <SocialLinks {...socialLinks} />
+              ))}
+              <SocialLinks {...socialLinks} />
+            </div>
           </div>
-        </div>
-      </Transition>
+        </Dialog.Panel>
+      </Dialog>
     </div>
   );
 };

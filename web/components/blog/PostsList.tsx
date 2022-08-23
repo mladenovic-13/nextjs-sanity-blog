@@ -11,10 +11,10 @@ const PostsList = () => {
   }
 
   return (
-    <div className="list__cards text-primary-900 flex flex-col justify-evenly items-center">
+    <div className="list__cards  flex flex-col justify-evenly items-center">
       <h2 className="section__heading text-primary-100 md:py-5">blog posts</h2>
       <Tab.Group>
-        <Tab.List className="flex w-full md:w-1/2 space-x-1 rounded-3xl p-1 bg-primary-900">
+        <Tab.List className="flex w-full md:w-1/2 space-x-1 rounded-3xl p-1 bg-slate-400/5">
           {Object.keys(categories).map((category) => (
             <Tab
               key={category}
@@ -23,8 +23,8 @@ const PostsList = () => {
                   "w-full rounded-3xl py-2.5  md:py-1.5 text-sm font-medium leading-5",
 
                   selected
-                    ? "bg-primary-100 outline-none transition ease-in duration-300  "
-                    : "text-primary-100"
+                    ? "bg-slate-900/70 font-extrabold outline-none transition ease-in duration-300  "
+                    : ""
                 )
               }
             >
@@ -45,7 +45,7 @@ const PostsList = () => {
           ))}
         </Tab.Panels>
       </Tab.Group>
-      <p className="view__more text-primary-100">View More &gt;</p>
+      <p className="view__more">View More &gt;</p>
     </div>
   );
 };

@@ -23,8 +23,8 @@ const posts = {
 const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
   return (
     <div
-      className="fixed z-50 w-64 px-5 inset-0 text-primary-100 bg-slate-800 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800s
-    lg:w-60 lg:relative lg:h-screen lg:scrollbar-thin lg:scrollbar-thumb-slate-500
+      className="z-30 fixed w-64 px-5 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
+    lg:w-60 lg:relative lg:h-screen lg:scrollbar-thumb-slate-500
     "
     >
       {Object.entries(posts).map(([category, onePost]) => (
