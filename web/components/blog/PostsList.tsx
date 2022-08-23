@@ -36,7 +36,7 @@ const PostsList = () => {
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel
               key={idx}
-              className="flex flex-col justify-between h-full md:flex-row md:gap-5 md:py-10"
+              className="flex flex-col justify-evenly h-full md:flex-row md:gap-5 md:py-10"
             >
               {posts.map((post, idx) => (
                 <BlogPostCard key={idx} {...post} />
