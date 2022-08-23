@@ -4,27 +4,27 @@ import Link from "next/link";
 import MenuIcon from "./MenuIcon";
 import SocialLinks from "../social/SocialLinks";
 
+interface INavbarItem {
+  title: string;
+  route: string;
+}
+const navbarItems = [
+  { title: "Home", route: "/" },
+  { title: "About Me", route: "/about" },
+  { title: "Projects", route: "/projects" },
+  { title: "Contact Me", route: "/contact" },
+  { title: "Blog", route: "/blog" },
+];
+
+const socialLinks = {
+  instagram: "/",
+  github: "/",
+  linkedin: "/",
+  email: "/",
+};
+
 const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
-
-  interface INavbarItem {
-    title: string;
-    route: string;
-  }
-  const navbarItems = [
-    { title: "Home", route: "/" },
-    { title: "About Me", route: "/about" },
-    { title: "Projects", route: "/projects" },
-    { title: "Contact Me", route: "/contact" },
-    { title: "Blog", route: "/blog" },
-  ];
-
-  const socialLinks = {
-    instagram: "/",
-    github: "/",
-    linkedin: "/",
-    email: "/",
-  };
 
   return (
     <div className="">

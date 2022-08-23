@@ -46,6 +46,12 @@
 }
 
 @layer utilities {
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+  .scrollbar-sm::-webkit-scrollbar {
+    width: 2px;
+  }
   .list__cards {
     @apply h-[90%] w-[80%];
   }
