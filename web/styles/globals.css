@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    color: theme("colors.primary-100");
+    color: theme("colors.slate[100]");
     -webkit-tap-highlight-color: transparent;
   }
 }
@@ -17,20 +17,20 @@
     @apply hidden md:block;
   }
   .main__container {
-    @apply w-screen h-screen bg-primary-900;
+    @apply fixed inset-0 w-screen h-screen bg-slate-900 overflow-hidden;
   }
   .section__container {
-    @apply fixed h-screen snap-mandatory snap-y overflow-scroll;
+    @apply fixed inset-0 h-screen w-screen snap-mandatory snap-y overflow-y-auto;
     @apply md:w-screen;
   }
   /* */
   .section {
-    @apply mb-[0.5px] h-full snap-start snap-always flex justify-center items-center;
+    @apply relative mb-[1px] mt-[1px] h-screen snap-start snap-always flex justify-center items-center overflow-auto;
     @apply md:flex-row;
   }
 
   .card {
-    @apply min-h-fit flex flex-col rounded-2xl drop-shadow-2xl shadow-md;
+    @apply min-h-fit flex flex-col rounded-xl;
   }
 
   .section__heading {
@@ -41,13 +41,19 @@
   }
 
   .form__input {
-    @apply outline-none w-full py-2 px-4 rounded-3xl bg-primary-900 text-primary-100;
+    @apply outline-none w-full py-2 px-4 rounded-3xl bg-slate-200/10;
   }
 }
 
 @layer utilities {
+  .center {
+    @apply flex justify-center items-center;
+  }
+  .scrollbar-sm::-webkit-scrollbar {
+    width: 2px;
+  }
   .list__cards {
-    @apply h-[90%] w-[80%];
+    @apply z-30 h-[90%] w-[80%];
   }
 
   .space__cards {

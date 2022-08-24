@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 const ProjectCard = ({
@@ -11,7 +9,7 @@ const ProjectCard = ({
   githubLink,
 }: ProjectCardProps) => {
   return (
-    <div className="h-1/4 card gap-[5%] md:gap-[2%] px-4 py-2  bg-primary-900 shadow-primary-900 md:w-full md:h-full">
+    <div className="h-1/4 max-h-72 max-w-lg card gap-[5%] md:gap-[2%] px-4 py-2 bg-slate-200/5 md:w-full md:h-full">
       <div className="flex justify-between items-center">
         <svg
           className="w-5 fill-white"

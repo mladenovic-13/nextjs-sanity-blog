@@ -1,16 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PostCard } from "../blog/type";
 
-const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
+const BlogPostCard = ({ title, desc, postURL }: PostCard) => {
   return (
-    <div className="h-[32%] md:h-full md:w-full card justify-between bg-primary-100 shadow-primary-600 relative">
-      <div className="px-4 py-1 flex justify-between">
-        <h2 className="font-semibold tracking-wider">{title}</h2>
+    <div className="h-[32%] bg-slate-400/5 md:h-full md:w-full card justify-between relative">
+      <div className="px-4 py-1 flex justify-between bg-slate-600/30 rounded-t-xl">
+        <h2 className="font-semibold tracking-wider ">{title}</h2>
         <Link href={postURL}>
           <svg
-            className="w-4 fill-primary-900"
+            className="w-4 fill-slate-100"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -18,16 +17,8 @@ const BlogPostCard = ({ title, desc, imgURL, postURL }: PostCard) => {
           </svg>
         </Link>
       </div>
-      <div className="rounded-b-2xl relative h-[90%] w-full">
-        <Image
-          className="rounded-b-2xl"
-          src={imgURL}
-          layout="fill"
-          objectFit="cover"
-          alt={`"${title}" blog post image`}
-        />
-      </div>
-      <p className="text-sm absolute bottom-0 px-4 py-2 rounded-b-2xl bg-primary-300 bg-opacity-20">
+
+      <p className="text-sm absolute bottom-0 px-4 py-2 rounded-b-2xl bg-slate-600/30  bg-opacity-20">
         {desc}
       </p>
     </div>
