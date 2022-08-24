@@ -1,5 +1,5 @@
 ---
-title: "Binarno drvo pretrage ( BST )"
+title: "Binarno drvo pretrage (BST)"
 author: "Nikola Mladenovic"
 category: "CS"
 date: "2022-03-13"
