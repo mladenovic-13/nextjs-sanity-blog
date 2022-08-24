@@ -24,7 +24,7 @@ const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
   return (
     <div
       className="z-30 fixed w-64 px-5 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
-    lg:w-60 lg:relative lg:h-screen lg:scrollbar-thumb-slate-500
+    lg:w-60 lg:relative lg:h-full lg:scrollbar-thumb-slate-500
     "
     >
       {Object.entries(posts).map(([category, onePost]) => (

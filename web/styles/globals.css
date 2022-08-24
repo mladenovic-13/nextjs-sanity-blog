@@ -46,6 +46,9 @@
 }
 
 @layer utilities {
+  .center {
+    @apply flex justify-center items-center;
+  }
   .scrollbar-sm::-webkit-scrollbar {
     width: 2px;
   }
