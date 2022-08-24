@@ -29,13 +29,13 @@ const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
     >
       {Object.entries(posts).map(([category, onePost]) => (
         <div key={category} className="tracking-wide text-sm">
-          <h3 className="py-6 tracking-wider font-bold">{category}</h3>
-          <div className="border-l-[0.5px] border-slate-500">
-            <div className="flex flex-col space-y-4 w-full h-full text-zinc-400 font-light ">
+          <h3 className="py-3 tracking-wider font-bold">{category}</h3>
+          <div className="border-l-[1px] border-slate-400/10">
+            <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
               {onePost.map((post) => (
                 <div
                   key={post}
-                  className=" font-light -ml-[1px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300"
+                  className="-ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer"
                 >
                   {post}
                 </div>

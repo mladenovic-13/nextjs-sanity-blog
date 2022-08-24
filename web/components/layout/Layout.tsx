@@ -17,7 +17,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
           <Sidebar isDesktop />
         </div>
 
-        <div className="p-3 lg:inline-block lg:px-8 lg:py-6">{children}</div>
+        <div className="p-3 lg:inline-block lg:px-16 lg:py-8">{children}</div>
       </div>
     </div>
   );

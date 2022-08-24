@@ -1,4 +1,5 @@
 import { Dialog } from "@headlessui/react";
+import Link from "next/link";
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 
@@ -9,16 +10,18 @@ const BlogNavbar = () => {
     <>
       {/* Desktop navbar */}
       <div className="hidden sticky top-0 z-50 w-full py-3 px-6 lg:flex justify-between backdrop-blur border-b-[1px] border-slate-700/90">
-        <div className="flex font-extrabold">Mladenovic13</div>
-        <div className="w-1/3 text-xs font-bold flex justify-evenly items-center">
-          <div>About Me</div>
-          <div>Projects</div>
-          <div>Blog</div>
-          <div>Contact Me</div>
-          <div className="w-1/5 flex justify-evenly border-l-[1px] border-slate-700/90">
+        <Link href="/">
+          <div className="flex font-extrabold cursor-pointer">Mladenovic13</div>
+        </Link>
+        <div className="w-1/2 xl:w-1/3 text-xs font-bold flex justify-evenly items-center">
+          <div className="cursor-pointer">About Me</div>
+          <div className="cursor-pointer">Projects</div>
+          <div className="cursor-pointer">Blog</div>
+          <div className="cursor-pointer">Contact Me</div>
+          <div className="w-1/5 flex items-center justify-evenly border-l-[1px] border-slate-700/90">
             <div>
               <svg
-                className="fill-white w-6 h-6"
+                className="fill-white w-5 h-5 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
               >
@@ -27,7 +30,7 @@ const BlogNavbar = () => {
             </div>
             <div>
               <svg
-                className="fill-white w-6 h-6"
+                className="fill-white w-5 h-5 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
