@@ -25,8 +25,8 @@ const Hero = () => {
           <CTA />
         </div>
       </div>
-      <div className="relative w-full h-[45%] md:h-4/5 md:absolute md:bottom-0 md:right-0 md:w-3/5">
-        <Image priority src={heroImg} alt="Hero Image" layout="fill" />
+      <div className="relative w-full z-50 h-[45%] md:h-4/5 md:absolute md:bottom-0 md:right-0 md:w-3/5">
+        <Image src={heroImg} alt="Hero Image" layout="fill" />
       </div>
     </div>
   );
