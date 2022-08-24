@@ -42,7 +42,7 @@ const BlogNavbar = () => {
       </div>
 
       {/* Mobile navbar */}
-      <div className="sticky top-0 bg-slate-900/70 backdrop-blur lg:hidden">
+      <div className="z-10 sticky top-0 bg-slate-900/70 backdrop-blur lg:hidden">
         <div className="mx-3 py-2 flex justify-between text-base border-b-[1px] border-slate-700/90">
           <div className="font-extrabold">Mladenovic13</div>
           <div className="w-[14%] flex justify-between">
@@ -90,7 +90,7 @@ const BlogNavbar = () => {
       {/* Sidebar modal - mobile only */}
       <Dialog open={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
         <div
-          className="fixed inset-0 bg-slate-800/80 backdrop-blur-sm"
+          className="z-30 fixed inset-0 bg-slate-800/80 backdrop-blur-sm"
           aria-hidden="true"
         />
         <Dialog.Panel>

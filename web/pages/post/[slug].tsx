@@ -11,7 +11,7 @@ import { NextPageWithLayout } from "../_app";
 const Post: NextPageWithLayout = ({ frontmatter, content }: any) => {
   const { title, author, category, date, bannerImage, tags } = frontmatter;
   return (
-    <div className="flex justify-center">
+    <div className="">
       <main className="prose prose-invert prose-img:rounded-xl">
         <div
           dangerouslySetInnerHTML={{

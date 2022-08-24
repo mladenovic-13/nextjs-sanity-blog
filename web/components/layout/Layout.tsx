@@ -12,7 +12,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
     <div className="bg-slate-900">
       <MainMask isBlog />
       <BlogNavbar />
-      <div className="flex flex-col lg:flex-row lg:h-full lg:relative">
+      <div className="flex flex-col lg:flex-row lg:h-full relative">
         <div className="hidden lg:inline-block lg:sticky lg:top-[49px] h-[calc(100vh-49px)]">
           <Sidebar isDesktop />
         </div>
