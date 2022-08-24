@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import maskImg from "../../public/images/bg-img.avif";
 
 interface MaskProps {
   rotate?: boolean;
@@ -14,12 +15,7 @@ const MainMask = ({ rotate, isBlog }: MaskProps) => {
           rotate && "rotate-180"
         }`}
       >
-        <Image
-          src="/images/bg-img.avif"
-          objectFit="cover"
-          layout="fill"
-          alt=""
-        />
+        <Image src={maskImg} objectFit="cover" layout="fill" alt="" />
       </div>
     </div>
   );

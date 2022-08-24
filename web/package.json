@@ -13,8 +13,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.6.6",
-    "@sanity/client": "^3.3.3",
-    "@sanity/types": "^2.30.5",
     "@tailwindcss/typography": "^0.5.4",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",

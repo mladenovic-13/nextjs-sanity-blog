@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import CTA from "../buttons/CTA";
+import heroImg from "../../public/icons/hero.png";
 
 const Hero = () => {
   return (
@@ -25,7 +26,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="relative w-full h-[45%] md:h-4/5 md:absolute md:bottom-0 md:right-0 md:w-3/5">
-        <Image priority src="/icons/hero.png" alt="Hero Image" layout="fill" />
+        <Image priority src={heroImg} alt="Hero Image" layout="fill" />
       </div>
     </div>
   );
