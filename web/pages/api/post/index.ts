@@ -17,6 +17,7 @@ const handler = async (
         const file = await fs.readFile(`posts/${filename}`, "utf-8");
         const { data } = matter(file);
         const frontmatter = data as Frontmatter;
+        frontmatter.slug = slug;
         postsFrontmatters.push(frontmatter);
       })
     );

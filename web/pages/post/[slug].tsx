@@ -22,7 +22,7 @@ const Post: NextPageWithLayout = ({ slug }: any) => {
           <main className="prose prose-invert prose-img:rounded-xl">
             <div
               dangerouslySetInnerHTML={{
-                __html: md().render(data.content),
+                __html: md().render(data.content || ""),
               }}
             />
           </main>

@@ -16,7 +16,7 @@ const usePosts = () => {
   return useQuery<Frontmatter[]>(["posts"], () => fetchPosts());
 };
 const usePost = (slug: string) => {
-  return useQuery<Post[]>(["post", slug], () => fetchPost(slug));
+  return useQuery<Post>(["post", slug], () => fetchPost(slug));
 };
 
 export { usePosts, fetchPosts, fetchPost, usePost };
