@@ -1,12 +1,10 @@
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
-import fs from "fs";
-import matter from "gray-matter";
 import md from "markdown-it";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { ReactElement } from "react";
 import Layout from "../../components/layout/Layout";
-import { fetchPost, usePost, usePosts } from "../../hooks/usePosts";
+import { fetchPost, usePost, usePosts } from "../../hooks/posts";
 import { NextPageWithLayout } from "../_app";
 
 // The page for each post

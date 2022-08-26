@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { usePosts } from "../../hooks/usePosts";
+import { usePosts } from "../../hooks/posts";
 import { sortPosts } from "../../utils/sortPosts";
 
 interface SidebarProps {
