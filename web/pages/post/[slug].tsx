@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { ReactElement } from "react";
 import Layout from "../../components/layout/Layout";
-import { fetchPost, usePost, usePosts } from "../../hooks/posts";
+import { fetchPost, fetchPosts, usePost, usePosts } from "../../hooks/posts";
 import { NextPageWithLayout } from "../_app";
 
 // The page for each post
@@ -31,9 +31,12 @@ const Post: NextPageWithLayout = ({ slug }: any) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = (await fetchPosts()).map((post: Frontmatter) => ({
+    params: { slug: post.slug },
+  }));
   return {
-    paths: [],
-    fallback: "blocking",
+    paths,
+    fallback: false,
   };
 };
 

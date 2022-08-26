@@ -1,7 +1,7 @@
 type GithubRepo = {
   name: string;
   owner: { login: string };
-  description?: string | null;
+  description: string | null;
   languages: {
     nodes: [
       {

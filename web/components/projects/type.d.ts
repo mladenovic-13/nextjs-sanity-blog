@@ -1,7 +1,8 @@
 interface ProjectCardProps {
   title: string;
   desc: string;
-  stack: string[];
+  stack?: string[];
   githubLink: string;
   demoLink: string;
+  isProjectPage?: boolean;
 }

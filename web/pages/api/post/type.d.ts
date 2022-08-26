@@ -5,7 +5,7 @@ type Frontmatter = {
   date: Date;
   bannerImage: string;
   tags: string[];
-  slug?: string;
+  slug: string;
 };
 type Post = {
   frontmatter: Frontmatter;

@@ -9,7 +9,7 @@ interface MaskProps {
 
 const MainMask = ({ rotate, isBlog }: MaskProps) => {
   return (
-    <div className="absolute z-20 top-0 inset-x-0 flex justify-end overflow-hidden pointer-events-none">
+    <div className="absolute z-10 top-0 inset-x-0 flex justify-end overflow-hidden pointer-events-none">
       <div
         className={`relative h-screen ${isBlog ? "w-[60rem]" : "w-full"} ${
           rotate && "rotate-180"

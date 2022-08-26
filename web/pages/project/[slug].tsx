@@ -2,7 +2,7 @@ import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
-import { fetchRepo, useRepo } from "../../hooks/githubRepos";
+import { fetchRepo, fetchRepos, useRepo } from "../../hooks/githubRepos";
 
 interface IProps {
   slug: string;
@@ -28,9 +28,12 @@ const Project: NextPage<IProps> = ({ slug }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = (await fetchRepos()).map((repo: GithubRepo) => ({
+    params: { slug: repo.name },
+  }));
   return {
-    paths: [],
-    fallback: "blocking",
+    paths,
+    fallback: false,
   };
 };
 

@@ -27,10 +27,12 @@ const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
 
   return (
-    <div className="">
+    <div>
       <div
         onClick={() => setIsShowing((isShowing) => !isShowing)}
-        className="absolute top-[2%] right-[4%] md:p-3 rounded-xl z-50"
+        className={`${
+          isShowing && "hidden"
+        } absolute top-[2%] right-[4%] md:p-3 rounded-xl z-10`}
       >
         <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
       </div>
@@ -40,7 +42,7 @@ const Navbar = () => {
           aria-hidden="true"
         />
         <Dialog.Panel>
-          <div className="fixed top-[1.5%] right-[3%] w-2/3 lg:w-1/4 xl:w-1/5 py-3 flex flex-col items-start  bg-slate-900/70 rounded-md">
+          <div className="z-50 fixed top-[1.5%] right-[3%] w-2/3 lg:w-1/4 xl:w-1/5 py-3 flex flex-col items-start  bg-slate-900/70 rounded-md">
             <div
               onClick={() => setIsShowing((prev) => !prev)}
               className="absolute right-[3%] top-[3%]"
@@ -61,13 +63,18 @@ const Navbar = () => {
             <div className="w-full px-6 tracking-wider flex flex-col justify-around text-xl ">
               {navbarItems.map((item: INavbarItem) => (
                 <div key={item.title} className="py-1">
-                  <div onClick={() => setIsShowing((isShowing) => !isShowing)}>
-                    <Link
-                      className="focus:outline-none focus:shadow-none"
-                      href={item.route}
+                  <div>
+                    <div
+                      className="max-w-fit"
+                      onClick={() => setIsShowing((isShowing) => !isShowing)}
                     >
-                      {item.title}
-                    </Link>
+                      <Link
+                        className="focus:outline-none focus:shadow-none"
+                        href={item.route}
+                      >
+                        {item.title}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
