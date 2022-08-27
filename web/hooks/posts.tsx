@@ -1,17 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiUrl } from "../utils/apiUrl";
+import { fetchWrapper } from "../utils/fetchWrapper";
 
 const fetchPosts = async () => {
-  const res = await fetch(`${apiUrl}/post`, { method: "GET" });
-  return res.json();
+  return await fetchWrapper(`${apiUrl}/post`);
+  // const res = await fetch(`${apiUrl}/post`, { method: "GET" });
+  // return res.json();
 };
 
 const fetchPost = async (slug: string) => {
-  const res = await fetch(`${apiUrl}/post/${slug}`, {
-    method: "GET",
-  });
-  console.log("Fething post");
-  return res.json();
+  return fetchWrapper(`${apiUrl}/post/${slug}`);
+  // const res = await fetch(`${apiUrl}/post/${slug}`, {
+  //   method: "GET",
+  // });
+  // console.log("Fething post");
+  // return res.json();
 };
 
 const usePosts = () => {

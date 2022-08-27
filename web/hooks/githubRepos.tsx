@@ -1,17 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiUrl } from "../utils/apiUrl";
+import { fetchWrapper } from "../utils/fetchWrapper";
 
 const fetchRepo = async (repo: string) => {
-  const res = await fetch(`${apiUrl}/github/${repo}`, {
-    method: "GET",
-  });
-  return res.json();
+  return await fetchWrapper(`${apiUrl}/github/${repo}`);
+  // const res = await fetch(`${apiUrl}/github/${repo}`, {
+  //   method: "GET",
+  // });
+  // return res.json();
 };
 const fetchRepos = async () => {
-  const res = await fetch(`${apiUrl}/github`, {
-    method: "GET",
-  });
-  return res.json();
+  return await fetchWrapper(`${apiUrl}/github`);
+  // const res = await fetch(`${apiUrl}/github`, {
+  //   method: "GET",
+  // });
+  // return res.json();
 };
 
 const useRepo = (repo: string) => {
