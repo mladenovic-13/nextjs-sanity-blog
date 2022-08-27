@@ -1,14 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
+import { apiUrl } from "../utils/apiUrl";
 
 const fetchPosts = async () => {
-  const res = await fetch("http://localhost:3000/api/post", { method: "GET" });
+  const res = await fetch(`${apiUrl}/post`, { method: "GET" });
   return res.json();
 };
 
 const fetchPost = async (slug: string) => {
-  const res = await fetch(`http://localhost:3000/api/post/${slug}`, {
+  const res = await fetch(`${apiUrl}/post/${slug}`, {
     method: "GET",
   });
+  console.log("Fething post");
   return res.json();
 };
 

@@ -7,6 +7,7 @@ import {
   QueryClient,
   Hydrate,
 } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -24,9 +25,10 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehidratedState}>
+      <Hydrate state={pageProps.dehydratedState}>
         <Component {...pageProps} />
       </Hydrate>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
