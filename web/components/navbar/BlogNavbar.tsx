@@ -44,7 +44,9 @@ const BlogNavbar = () => {
       {/* Mobile navbar */}
       <div className="z-10 sticky top-0 bg-slate-900/70 backdrop-blur lg:hidden">
         <div className="mx-3 py-2 flex justify-between text-base border-b-[1px] border-slate-700/90">
-          <div className="font-extrabold">Mladenovic13</div>
+          <Link href="/">
+            <div className="font-extrabold">Mladenovic13</div>
+          </Link>
           <div className="w-[14%] flex justify-between">
             <div className="center">
               <svg

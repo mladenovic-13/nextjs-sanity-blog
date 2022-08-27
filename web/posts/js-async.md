@@ -1,7 +1,7 @@
 ---
 title: "JavaScript async/await"
 author: "Nikola Mladenovic"
-category: "JavaScript"
+category: "JS"
 date: "2022-03-13"
 bannerImage: "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000"
 tags:

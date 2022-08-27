@@ -7,9 +7,14 @@ const ProjectCard = ({
   stack,
   demoLink,
   githubLink,
+  isProjectPage,
 }: ProjectCardProps) => {
   return (
-    <div className="h-1/4 max-h-72 max-w-lg card gap-[5%] md:gap-[2%] px-4 py-2 bg-slate-200/5 md:w-full md:h-full">
+    <div
+      className={`${
+        isProjectPage ? "h-full" : "h-1/4"
+      } max-h-72 max-w-lg card gap-[5%] md:gap-[2%] px-4 py-2 bg-slate-200/5 md:w-full md:h-full`}
+    >
       <div className="flex justify-between items-center">
         <svg
           className="w-5 fill-white"
@@ -41,16 +46,17 @@ const ProjectCard = ({
       </div>
       <div className="flex flex-col justify-between h-full md:text-center">
         <h2 className="font-semibold md:text-lg">{title}</h2>
-        <p className="text-sm md:text-base">{desc}</p>
+        <p className="min text-sm md:text-base">{desc}</p>
         <ul>
-          {stack.map((item, index) => (
-            <li
-              className="inline mr-1 text-xs md:text-sm text-gray-400"
-              key={index}
-            >
-              {item}
-            </li>
-          ))}
+          {stack &&
+            stack.map((item, index) => (
+              <li
+                className="inline mr-1 text-xs md:text-sm text-gray-400"
+                key={index}
+              >
+                {item}
+              </li>
+            ))}
         </ul>
       </div>
     </div>
