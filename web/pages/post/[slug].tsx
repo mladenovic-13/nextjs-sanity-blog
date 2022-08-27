@@ -1,63 +1,71 @@
-import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
-import md from "markdown-it";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { ParsedUrlQuery } from "querystring";
-import { ReactElement } from "react";
-import Layout from "../../components/layout/Layout";
-import { fetchPost, fetchPosts, usePost, usePosts } from "../../hooks/posts";
-import { NextPageWithLayout } from "../_app";
+import React from "react";
 
-// The page for each post
-const Post: NextPageWithLayout = ({ slug }: any) => {
-  const { data, isSuccess, isLoading, error } = usePost(slug);
-
-  const render = () => {
-    if (isLoading) return <div>Loading</div>;
-    if (error) return <div>Error</div>;
-    if (isSuccess)
-      return (
-        <div className="">
-          <main className="prose prose-invert prose-img:rounded-xl">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: md().render(data.content || ""),
-              }}
-            />
-          </main>
-        </div>
-      );
-  };
-  return <>{render()}</>;
+const Page = () => {
+  return <div>Page</div>;
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = (await fetchPosts()).map((post: Frontmatter) => ({
-    params: { slug: post.slug },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-};
+export default Page;
 
-interface IParams extends ParsedUrlQuery {
-  slug: string;
-}
+// import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+// import md from "markdown-it";
+// import { GetStaticPaths, GetStaticProps } from "next";
+// import { ParsedUrlQuery } from "querystring";
+// import { ReactElement } from "react";
+// import Layout from "../../components/layout/Layout";
+// import { fetchPost, fetchPosts, usePost, usePosts } from "../../hooks/posts";
+// import { NextPageWithLayout } from "../_app";
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params as IParams;
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(["post", slug], () => fetchPost(slug));
+// // The page for each post
+// const Post: NextPageWithLayout = ({ slug }: any) => {
+//   const { data, isSuccess, isLoading, error } = usePost(slug);
 
-  return {
-    props: {
-      slug,
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-};
+//   const render = () => {
+//     if (isLoading) return <div>Loading</div>;
+//     if (error) return <div>Error</div>;
+//     if (isSuccess)
+//       return (
+//         <div className="">
+//           <main className="prose prose-invert prose-img:rounded-xl">
+//             <div
+//               dangerouslySetInnerHTML={{
+//                 __html: md().render(data.content || ""),
+//               }}
+//             />
+//           </main>
+//         </div>
+//       );
+//   };
+//   return <>{render()}</>;
+// };
 
-Post.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
-export default Post;
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const paths = (await fetchPosts()).map((post: Frontmatter) => ({
+//     params: { slug: post.slug },
+//   }));
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+// interface IParams extends ParsedUrlQuery {
+//   slug: string;
+// }
+
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const { slug } = context.params as IParams;
+//   const queryClient = new QueryClient();
+//   await queryClient.prefetchQuery(["post", slug], () => fetchPost(slug));
+
+//   return {
+//     props: {
+//       slug,
+//       dehydratedState: dehydrate(queryClient),
+//     },
+//   };
+// };
+
+// Post.getLayout = function getLayout(page: ReactElement) {
+//   return <Layout>{page}</Layout>;
+// };
+// export default Post;
