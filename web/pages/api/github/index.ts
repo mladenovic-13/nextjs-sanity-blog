@@ -14,7 +14,7 @@ const handler = async (
     const data: GithubRepo[] = await getAllGithubRepos();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send("Server Error");
   }
 };
 
