@@ -10,7 +10,7 @@ const handler = async (
     const data: GithubRepo = await getGithubRepo(slug as string);
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).send("Server Error");
+    res.status(500);
   }
 };
 export default handler;
