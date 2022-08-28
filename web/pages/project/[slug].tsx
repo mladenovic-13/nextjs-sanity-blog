@@ -3,6 +3,8 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
 import { fetchRepo, fetchRepos, useRepo } from "../../hooks/githubRepos";
+import md from "markdown-it";
+import MainMask from "../../components/mask/MainMask";
 
 interface IProps {
   slug: string;
@@ -14,17 +16,21 @@ const Project: NextPage<IProps> = ({ slug }) => {
     if (isLoading) return <div>Loading...</div>;
     if (isSuccess)
       return (
-        <div>
-          <h1>{data.name}</h1>
-          <h1>{data.languages.nodes[0].name}</h1>
-          <h1>{data.languages.nodes[0].color}</h1>
-          <h1>{data.owner.login}</h1>
-          <h1>{data.createdAt.toString()}</h1>
-          <h1>{data.object?.text}</h1>
-        </div>
+        <main className="prose prose-invert prose-img:rounded-xl">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: md().render(data.object?.text || ""),
+            }}
+          />
+        </main>
       );
   };
-  return <div className="text-black">{render()}</div>;
+  return (
+    <div className="bg-slate-900 flex justify-center">
+      <MainMask />
+      {render()}
+    </div>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

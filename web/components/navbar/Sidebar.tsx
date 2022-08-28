@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { usePosts } from "../../hooks/posts";
 import { sortPosts } from "../../utils/sortPosts";
+import SidebarCategory from "./SidebarCategory";
 
 interface SidebarProps {
   setIsSidebarOpen?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -16,6 +17,10 @@ const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
   // Get slug for focusing active page on sidebar list
   const router = useRouter();
   const currentPage = router.asPath.replace("/post/", "");
+  // category controll
+  const [isCssOpen, setIsCssOpen] = useState(false);
+  const [isJsOpen, setIsJsOpen] = useState(false);
+  const [isCsOpen, setIsCsOpen] = useState(false);
 
   // query
   const { data, isLoading, isSuccess, error } = usePosts();
@@ -24,82 +29,50 @@ const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
     CSS: [],
     "Computer Science": [],
   });
+
   useEffect(() => {
     if (data) setCategorizedPosts(sortPosts(data));
-  }, [data]);
+    categorizedPosts.CSS.forEach((post) => {
+      if (post.slug === currentPage) setIsCssOpen(true);
+    });
+    categorizedPosts["Computer Science"].forEach((post) => {
+      if (post.slug === currentPage) setIsCsOpen(true);
+    });
+    categorizedPosts.JavaScript.forEach((post) => {
+      if (post.slug === currentPage) setIsJsOpen(true);
+    });
+  }, [data, router.asPath]);
 
   return (
     <div
-      className="z-30 fixed w-64 px-5 lg:py-3 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
+      className="z-30 fixed w-64 px-5 py-3 lg:py-3 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
     lg:w-60 lg:relative lg:h-full lg:scrollbar-thumb-slate-500
     "
     >
-      <div className="tracking-wide text-sm">
-        <h3 className="py-3 tracking-wider font-bold">JavaScript</h3>
-        <div className="border-l-[1px] border-slate-400/10">
-          <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
-            {categorizedPosts.JavaScript.map((post) => (
-              <div
-                onClick={() =>
-                  setIsSidebarOpen &&
-                  setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen)
-                }
-                key={post.title}
-                className={`${
-                  currentPage === post.slug &&
-                  "border-l-2 text-primary-300 font-semibold"
-                } -ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer`}
-              >
-                <Link href={`/post/${post.slug}`}>{post.title}</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="tracking-wide text-sm">
-        <h3 className="py-3 tracking-wider font-bold">CSS</h3>
-        <div className="border-l-[1px] border-slate-400/10">
-          <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
-            {categorizedPosts.CSS.map((post) => (
-              <div
-                onClick={() =>
-                  setIsSidebarOpen &&
-                  setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen)
-                }
-                key={post.title}
-                className={`${
-                  currentPage === post.slug &&
-                  "border-l-2 text-primary-300 font-semibold"
-                } -ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer`}
-              >
-                <Link href={`/post/${post.slug}`}>{post.title}</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="tracking-wide text-sm">
-        <h3 className="py-3 tracking-wider font-bold">Computer Science</h3>
-        <div className="border-l-[1px] border-slate-400/10">
-          <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
-            {categorizedPosts["Computer Science"].map((post) => (
-              <div
-                onClick={() =>
-                  setIsSidebarOpen &&
-                  setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen)
-                }
-                key={post.title}
-                className={`${
-                  currentPage === post.slug &&
-                  "border-l-2 text-primary-300 font-semibold"
-                } -ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer`}
-              >
-                <Link href={`/post/${post.slug}`}>{post.title}</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <SidebarCategory
+        currentPage={currentPage}
+        isOpen={isJsOpen}
+        title="JavaScript"
+        posts={categorizedPosts.JavaScript}
+        setIsOpen={setIsJsOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
+      <SidebarCategory
+        currentPage={currentPage}
+        isOpen={isCssOpen}
+        title="CSS"
+        posts={categorizedPosts.CSS}
+        setIsOpen={setIsCssOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
+      <SidebarCategory
+        currentPage={currentPage}
+        isOpen={isCsOpen}
+        title="Computer Science"
+        posts={categorizedPosts["Computer Science"]}
+        setIsOpen={setIsCsOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
 
       {!isDesktop && (
         <button

@@ -18,7 +18,9 @@ const fetchPost = async (slug: string) => {
 };
 
 const usePosts = () => {
-  return useQuery<Frontmatter[]>(["posts"], () => fetchPosts());
+  return useQuery<Frontmatter[]>(["posts"], () => fetchPosts(), {
+    cacheTime: 100 * 1000,
+  });
 };
 const usePost = (slug: string) => {
   return useQuery<Post>(["post", slug], () => fetchPost(slug));
