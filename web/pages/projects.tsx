@@ -2,7 +2,7 @@ import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { GetStaticProps, NextPage } from "next";
 import React, { ReactElement } from "react";
 import ProjectCard from "../components/cards/ProjectCard";
-import MainLayout from "../components/layout/MainLayout";
+import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
 import { fetchRepos, useRepos } from "../hooks/githubRepos";
 import { NextPageWithLayout } from "./_app";

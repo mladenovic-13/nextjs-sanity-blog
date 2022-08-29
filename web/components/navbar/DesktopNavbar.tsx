@@ -3,11 +3,11 @@ import React from "react";
 
 const DesktopNavbar = () => {
   return (
-    <div className="hidden sticky top-0 z-50 w-full py-3 px-6 lg:flex justify-between backdrop-blur border-b-[1px] border-slate-700/90">
+    <div className="hidden bg-slate-900/30 sticky top-0 z-50 w-[99%] py-3 px-6 lg:flex justify-between backdrop-blur border-b-[1px] border-slate-700/90">
       <Link href="/">
         <div className="flex font-extrabold cursor-pointer">Mladenovic13</div>
       </Link>
-      <div className="w-1/2 xl:w-1/3 text-xs font-bold flex justify-evenly items-center">
+      <div className="w-[35%] text-xs font-bold flex justify-evenly items-center">
         <div className="cursor-pointer">About Me</div>
         <div className="cursor-pointer">Projects</div>
         <div className="cursor-pointer">Blog</div>

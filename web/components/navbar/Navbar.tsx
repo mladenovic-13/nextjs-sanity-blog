@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MenuIcon from "./MenuIcon";
 import Menu from "./Menu";
+import DesktopNavbar from "./DesktopNavbar";
 
 const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
         onClick={() => setIsShowing((isShowing) => !isShowing)}
         className={`${
           isShowing && "hidden"
-        } absolute top-0 right-2 md:p-3 z-10`}
+        } absolute top-0 right-2 md:p-3 z-10 lg:hidden`}
       >
         <div className="">
           <svg
@@ -66,6 +66,7 @@ const Navbar = () => {
           </svg>
         </div>
       </div>
+      <DesktopNavbar />
       <Menu isShowing={isShowing} setIsShowing={setIsShowing} />
     </div>
   );

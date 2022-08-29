@@ -12,7 +12,7 @@ const PostsList = () => {
 
   return (
     <div className="list__cards  flex flex-col justify-evenly items-center">
-      <h2 className="section__heading text-primary-100 md:py-5">blog posts</h2>
+      <h2 className="section__heading text-primary-100">blog posts</h2>
       <Tab.Group>
         <Tab.List className="flex w-full md:w-1/2 space-x-1 rounded-3xl p-1 bg-slate-400/5">
           {Object.keys(categories).map((category) => (

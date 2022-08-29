@@ -1,16 +1,24 @@
 import { NextPage, NextPageContext } from "next";
-import { MutableRefObject, ReactElement, useEffect, useRef } from "react";
+import {
+  MutableRefObject,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useRef,
+} from "react";
 import PostsList from "../components/blog/PostsList";
 import Contact from "../components/forms/Contact";
 import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
+import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
 import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import useOnScreen from "../hooks/useOnScreen";
+import { NextPageWithLayout } from "./_app";
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   const refHeroSection = useRef() as MutableRefObject<HTMLDivElement>;
   const refProjectsSection = useRef() as MutableRefObject<HTMLDivElement>;
   const refBlogSection = useRef() as MutableRefObject<HTMLDivElement>;
@@ -30,14 +38,10 @@ const Home: NextPage = () => {
 
   return (
     <div className="main__container">
-      <Navbar />
       {/* Scroll Container */}
       <div className="section__container">
         {/* Section */}
-        <div
-          ref={refHeroSection}
-          className="section relative bg-gradient-to-b bg-slate-900"
-        >
+        <div ref={refHeroSection} className="section">
           <MainMask />
           <Hero />
           <ScrollDown />
@@ -65,6 +69,10 @@ const Home: NextPage = () => {
       <ScrollCounter sections={sectionProps} />
     </div>
   );
+};
+
+Home.getLayout = (page: ReactNode) => {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default Home;

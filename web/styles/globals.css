@@ -23,10 +23,9 @@
     @apply fixed inset-0 h-screen w-screen snap-mandatory snap-y overflow-y-auto;
     @apply md:w-screen;
   }
-  /* */
   .section {
     @apply relative mb-[1px] mt-[1px] h-screen snap-start snap-always flex justify-center items-center overflow-auto;
-    @apply md:flex-row;
+    @apply md:flex-row lg:pt-12;
   }
 
   .card {
