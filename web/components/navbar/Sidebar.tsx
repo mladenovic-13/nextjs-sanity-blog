@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { usePosts } from "../../hooks/posts";
@@ -16,14 +15,16 @@ const queryClient = new QueryClient();
 const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
   // Get slug for focusing active page on sidebar list
   const router = useRouter();
-  const currentPage = router.asPath.replace("/post/", "");
+  const [currentPage, setCurrentPage] = useState(
+    router.asPath.replace("/post/", "")
+  );
   // category controll
   const [isCssOpen, setIsCssOpen] = useState(false);
   const [isJsOpen, setIsJsOpen] = useState(false);
   const [isCsOpen, setIsCsOpen] = useState(false);
 
   // query
-  const { data, isLoading, isSuccess, error } = usePosts();
+  const { data } = usePosts();
   const [categorizedPosts, setCategorizedPosts] = useState<CategorizedPosts>({
     JavaScript: [],
     CSS: [],
@@ -31,17 +32,36 @@ const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
   });
 
   useEffect(() => {
+    setCurrentPage(router.asPath.replace("/post/", ""));
+  }, [router.asPath]);
+
+  useEffect(() => {
     if (data) setCategorizedPosts(sortPosts(data));
+  }, [data]);
+
+  useEffect(() => {
     categorizedPosts.CSS.forEach((post) => {
-      if (post.slug === currentPage) setIsCssOpen(true);
+      if (post.slug === currentPage) {
+        setIsCssOpen(true);
+        console.log("***");
+        return;
+      }
     });
     categorizedPosts["Computer Science"].forEach((post) => {
-      if (post.slug === currentPage) setIsCsOpen(true);
+      if (post.slug === currentPage) {
+        setIsCsOpen(true);
+        console.log("***");
+        return;
+      }
     });
     categorizedPosts.JavaScript.forEach((post) => {
-      if (post.slug === currentPage) setIsJsOpen(true);
+      if (post.slug === currentPage) {
+        setIsJsOpen(true);
+        console.log("***");
+        return;
+      }
     });
-  }, [data, router.asPath]);
+  }, [categorizedPosts, currentPage]);
 
   return (
     <div

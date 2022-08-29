@@ -43,10 +43,10 @@ const SidebarCategory: FC<CategoryProps> = ({
           <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
             {posts.map((post) => (
               <div
-                onClick={() =>
+                onClick={() => {
                   setIsSidebarOpen &&
-                  setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen)
-                }
+                    setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
+                }}
                 key={post.title}
                 className={`${
                   currentPage === post.slug &&
