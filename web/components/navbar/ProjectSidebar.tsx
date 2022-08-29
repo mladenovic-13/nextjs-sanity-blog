@@ -1,40 +1,53 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Link from "next/link";
-import React, { FC } from "react";
+import { useRouter } from "next/router";
+import React, { FC, useEffect, useState } from "react";
+import { useRepos } from "../../hooks/githubRepos";
 
 interface IProjectSidebar {
   setIsSidebarOpen?: React.Dispatch<React.SetStateAction<boolean>>;
   isDesktop?: boolean;
 }
 
+const queryClient = new QueryClient();
+
 const ProjectSidebar: FC<IProjectSidebar> = ({
   isDesktop,
   setIsSidebarOpen,
 }) => {
-  const projects = ["Project1", "project 2", "project 3"];
-  const currentProject = "current";
+  const { data } = useRepos();
+  const router = useRouter();
+  const [currentProject, setCurrentProject] = useState(
+    router.asPath.replace("/project/", "")
+  );
+
+  useEffect(() => {
+    setCurrentProject(router.asPath.replace("/project/", ""));
+  }, [router.asPath]);
+
   return (
     <div
-      className="z-30 fixed w-64 px-5 py-3 lg:py-3 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
+      className="z-30 fixed w-64 px-5 py-3 lg:py-3 inset-0 border-r-[1px] border-slate-200/10  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
     lg:w-60 lg:relative lg:h-full lg:scrollbar-thumb-slate-500
     "
     >
       <div className="tracking-wide text-sm cursor-pointer ">
-        <span className="py-3 tracking-wider font-bold">Projects</span>
+        <div className="pb-4 tracking-wider font-bold">My Projects</div>
         <div className="transition ease-in-out duration-1000 border-l-[1px] border-slate-400/10">
           <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
-            {projects.map((project) => (
+            {data?.map((project) => (
               <div
                 onClick={() => {
                   setIsSidebarOpen &&
                     setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
                 }}
-                key={project}
+                key={project.name}
                 className={`${
-                  currentProject === project &&
+                  currentProject === project.name &&
                   "border-l-2 text-primary-300 font-semibold"
                 } -ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer`}
               >
-                <Link href={`/post/${project}`}>{project}</Link>
+                <Link href={`/project/${project.name}`}>{project.name}</Link>
               </div>
             ))}
           </div>
@@ -62,4 +75,10 @@ const ProjectSidebar: FC<IProjectSidebar> = ({
   );
 };
 
-export default ProjectSidebar;
+export default function Wraped(props: any) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ProjectSidebar {...props} />
+    </QueryClientProvider>
+  );
+}
