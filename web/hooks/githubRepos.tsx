@@ -4,17 +4,12 @@ import { fetchWrapper } from "../utils/fetchWrapper";
 
 const fetchRepo = async (repo: string) => {
   return await fetchWrapper(`${apiUrl}/github/${repo}`);
-  // const res = await fetch(`${apiUrl}/github/${repo}`, {
-  //   method: "GET",
-  // });
-  // return res.json();
 };
 const fetchRepos = async () => {
   return await fetchWrapper(`${apiUrl}/github`);
-  // const res = await fetch(`${apiUrl}/github`, {
-  //   method: "GET",
-  // });
-  // return res.json();
+};
+const fetchPinedRepos = async () => {
+  return await fetchWrapper(`${apiUrl}/github/pinned`);
 };
 
 const useRepo = (repo: string) => {
@@ -23,5 +18,8 @@ const useRepo = (repo: string) => {
 const useRepos = () => {
   return useQuery<GithubRepo[]>(["repos"], () => fetchRepos());
 };
+const usePinnedRepos = () => {
+  return useQuery<GithubRepo[]>(["repos"], () => fetchPinedRepos());
+};
 
-export { useRepo, fetchRepo, fetchRepos, useRepos };
+export { useRepo, fetchRepo, fetchRepos, useRepos, usePinnedRepos };

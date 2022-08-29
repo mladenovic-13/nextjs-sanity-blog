@@ -6,8 +6,7 @@ export const postsData = {
       desc: "Za implementaciju pojedinacnih cvorova BST-a koristimo klasu `Node`, koja sadrzi podatak koji cuvamo u cvoru i pokazivace na levo i desno podstablo.",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL:
-        "https://nextjs-sanity-blog-sooty.vercel.app/post/cs-bst-implementacija",
+      postURL: "/post/cs-bst-implementacija",
     },
     {
       id: 2,
@@ -15,7 +14,7 @@ export const postsData = {
       desc: "Algoritam sortiranja objedinjavanjem deli niz na dva dela cije se duzine razlikuju najvise za 1, rekurzivno sortira svaki od njih i objedinjuje sortirane polovine. ",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL: "https://nextjs-sanity-blog-sooty.vercel.app/post/cs-mergesort",
+      postURL: "/post/cs-mergesort",
     },
     {
       id: 3,
@@ -23,8 +22,7 @@ export const postsData = {
       desc: "Jedan nacin da se od niza formira hip (u istom memorijskom prostoru) je da se krene od praznog hipa i da se jedan po jedan element ubacuju u hip",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL:
-        "https://nextjs-sanity-blog-sooty.vercel.app/post/cs-flojdov-metod-formiranja-hipa",
+      postURL: "/post/cs-flojdov-metod-formiranja-hipa",
     },
   ],
   CSS: [
@@ -34,8 +32,7 @@ export const postsData = {
       desc: "Flexible Box Model (Flexbox) je jednodimenzijalni (red ili kolona) model rasporedjivanja elemenata na HTML stranici, suprotno od CSS Grid-a koji je dvodimenzionalni model.",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL:
-        "https://nextjs-sanity-blog-sooty.vercel.app/post/css-flexbox-layout",
+      postURL: "/post/css-flexbox-layout",
     },
     {
       id: 2,
@@ -43,8 +40,7 @@ export const postsData = {
       desc: "CSS Grid Layout omogucava da grupisemo elemente u redove i kolone. Radi se o dvodimenzionalnom pozicioniranju. Mrezu (grid) formiraju horizontalne i vertikalne linije.",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL:
-        "https://nextjs-sanity-blog-sooty.vercel.app/post/css-grid-layout",
+      postURL: "/post/css-grid-layout",
     },
     {
       id: 3,
@@ -52,8 +48,7 @@ export const postsData = {
       desc: "U ranijim danima web programiranja, stranice su pravljene za uredjaje sa tacno odredjenom velicinom ekrana, danas imamo problem.",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL:
-        "https://nextjs-sanity-blog-sooty.vercel.app/post/css-responsive-design",
+      postURL: "/post/css-responsive-design",
     },
   ],
   JavaScript: [
@@ -63,7 +58,7 @@ export const postsData = {
       desc: "Promisi kao sto sama rec kaze obecavaju da ce neki rezultat biti vracan nekada u buducnosti. Oni nam ne garantuju kada ce se operacija tacno zavrsiti.",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL: "https://nextjs-sanity-blog-sooty.vercel.app/post/js-promisi",
+      postURL: "/post/js-promisi",
     },
     {
       id: 2,
@@ -71,7 +66,7 @@ export const postsData = {
       desc: "Async funkcije, kao i kljucna rec await, dodate su u JavaScript kao sintaksicki secer.",
       imgURL:
         "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-      postURL: "https://nextjs-sanity-blog-sooty.vercel.app/post/js-async",
+      postURL: "/post/js-async",
     },
   ],
 };

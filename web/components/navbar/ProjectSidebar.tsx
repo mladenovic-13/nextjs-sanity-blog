@@ -27,7 +27,7 @@ const ProjectSidebar: FC<IProjectSidebar> = ({
 
   return (
     <div
-      className="z-30 fixed w-64 px-5 py-3 lg:py-3 inset-0 border-r-[1px] border-slate-200/10  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
+      className="z-30 fixed w-64 px-5 py-3 lg:py-16 inset-0 border-r-[1px] border-slate-200/10  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
     lg:w-60 lg:relative lg:h-full lg:scrollbar-thumb-slate-500
     "
     >

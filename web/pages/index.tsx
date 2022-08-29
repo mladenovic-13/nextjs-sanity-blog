@@ -1,18 +1,10 @@
-import { NextPage, NextPageContext } from "next";
-import {
-  MutableRefObject,
-  ReactElement,
-  ReactNode,
-  useEffect,
-  useRef,
-} from "react";
+import { MutableRefObject, ReactNode, useRef } from "react";
 import PostsList from "../components/blog/PostsList";
 import Contact from "../components/forms/Contact";
 import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
 import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
-import Navbar from "../components/navbar/Navbar";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import useOnScreen from "../hooks/useOnScreen";
