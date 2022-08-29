@@ -1,5 +1,6 @@
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 import React, { ReactElement } from "react";
 import ProjectCard from "../components/cards/ProjectCard";
 import MainLayout from "../components/layout/IndexLayout";
@@ -11,7 +12,7 @@ const Projects: NextPageWithLayout = () => {
   const { data } = useRepos();
 
   return (
-    <div className="w-full min-h-screen py-16 bg-slate-900">
+    <div className="w-full min-h-screen py-12 lg:py-16 bg-slate-900">
       <MainMask />
       <h1 className="section__heading mb-6">Projects</h1>
       <div

@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
 
   return (
-    <div>
+    <div className="sticky inset-0 z-10">
       <div
         onClick={() => setIsShowing((isShowing) => !isShowing)}
         className={`${

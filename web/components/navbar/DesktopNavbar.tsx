@@ -3,15 +3,23 @@ import React from "react";
 
 const DesktopNavbar = () => {
   return (
-    <div className="hidden bg-slate-900/30 sticky top-0 z-50 w-[99%] py-3 px-6 lg:flex justify-between backdrop-blur border-b-[1px] border-slate-700/90">
+    <div className="hidden bg-slate-900/30 absolute top-0 z-50 w-[99%] py-3 px-6 lg:flex justify-between backdrop-blur border-b-[1px] border-slate-700/90">
       <Link href="/">
         <div className="flex font-extrabold cursor-pointer">Mladenovic13</div>
       </Link>
-      <div className="w-[35%] text-xs font-bold flex justify-evenly items-center">
-        <div className="cursor-pointer">About Me</div>
-        <div className="cursor-pointer">Projects</div>
-        <div className="cursor-pointer">Blog</div>
-        <div className="cursor-pointer">Contact Me</div>
+      <div className="w-[35%] text-sm font-semibold flex justify-evenly items-center">
+        <Link href="/about">
+          <div className="cursor-pointer">About Me</div>
+        </Link>
+        <Link href="/projects">
+          <div className="cursor-pointer">Projects</div>
+        </Link>
+        <Link href="/blog">
+          <div className="cursor-pointer">Blog</div>
+        </Link>
+        <Link href="/contact">
+          <div className="cursor-pointer">Contact Me</div>
+        </Link>
         <div className="w-1/5 flex items-center justify-evenly border-l-[1px] border-slate-700/90">
           <div>
             <svg

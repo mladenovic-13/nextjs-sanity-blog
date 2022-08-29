@@ -16,11 +16,13 @@ const Layout: React.FC<ILayout> = ({ children, isPost, isProject }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="bg-slate-900 min-h-screen">
+    <div className="bg-slate-900 min-h-screen absolute top-0 w-full">
       <MainMask isBlog />
 
       {/* Desktop navbar */}
-      <DesktopNavbar />
+      <div className="sticky top-0 z-10">
+        <DesktopNavbar />
+      </div>
       {/* Mobile navbar */}
       <MobileNavbar setIsSidebarOpen={setIsSidebarOpen} />
       {/* Sidebar modal - mobile only */}
@@ -40,7 +42,7 @@ const Layout: React.FC<ILayout> = ({ children, isPost, isProject }) => {
           {isProject && <ProjectSidebar isDesktop />}
         </div>
 
-        <div className="p-3 lg:inline-block lg:px-16 lg:py-8">{children}</div>
+        <div className="p-3 lg:inline-block lg:p-16">{children}</div>
       </div>
     </div>
   );
