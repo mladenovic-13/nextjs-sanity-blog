@@ -3,51 +3,6 @@ import React from "react";
 import { usePinnedRepos } from "../../hooks/githubRepos";
 import ProjectCard from "../cards/ProjectCard";
 
-const projectCards: ProjectCardProps[] = [
-  {
-    title: "Apartment Booking",
-    desc: "Application for booking rooms and houses",
-    stack: ["NextJS", "TypeScript"],
-    githubLink: "https://github.com/mladenovic-13/booking-app",
-    demoLink: "https://booking-app-steel.vercel.app",
-  },
-  {
-    title: "Floteq",
-    desc: "Full-stack website for start-up from Australia.",
-    stack: ["Gatsby", "React", "TailwindCSS"],
-    demoLink: "https://www.floteq.com.au/",
-    githubLink: "https://github.com/mladenovic-13/floteq-website",
-  },
-  {
-    title: "Admin Dashboard",
-    desc: "Professional admin dashboard with Firebase Auth and CRUD functions.",
-    stack: ["Firebase", "TypeScript"],
-    demoLink: "https://admin-dashboard-two-ochre.vercel.app",
-    githubLink: "https://github.com/mladenovic-13/delivery-app",
-  },
-  {
-    title: "Apartment Booking",
-    desc: "Application for booking rooms and houses",
-    stack: ["NextJS", "TypeScript"],
-    githubLink: "https://github.com/mladenovic-13/booking-app",
-    demoLink: "https://booking-app-steel.vercel.app",
-  },
-  {
-    title: "Floteq",
-    desc: "Full-stack website for start-up from Australia.",
-    stack: ["Gatsby", "React", "TailwindCSS"],
-    demoLink: "https://www.floteq.com.au/",
-    githubLink: "https://github.com/mladenovic-13/floteq-website",
-  },
-  {
-    title: "Admin Dashboard",
-    desc: "Professional admin dashboard with Firebase Auth and CRUD functions.",
-    stack: ["Firebase", "TypeScript"],
-    demoLink: "https://admin-dashboard-two-ochre.vercel.app",
-    githubLink: "https://github.com/mladenovic-13/delivery-app",
-  },
-];
-
 const queryClient = new QueryClient();
 
 const ProjectList = () => {
