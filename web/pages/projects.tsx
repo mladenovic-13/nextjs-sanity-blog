@@ -38,7 +38,9 @@ const Projects: NextPageWithLayout = () => {
 
 const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
-  queryClient.prefetchQuery(["repos"], () => fetchRepos());
+  queryClient.prefetchQuery(["repos"], () => fetchRepos(), {
+    staleTime: Infinity,
+  });
 
   return {
     props: {
