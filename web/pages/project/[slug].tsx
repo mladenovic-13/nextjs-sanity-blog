@@ -1,16 +1,14 @@
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
-import React from "react";
+import React, { ReactElement } from "react";
 import { fetchRepo, fetchRepos, useRepo } from "../../hooks/githubRepos";
 import md from "markdown-it";
 import MainMask from "../../components/mask/MainMask";
+import { NextPageWithLayout } from "../_app";
+import Layout from "../../components/layout/Layout";
 
-interface IProps {
-  slug: string;
-}
-
-const Project: NextPage<IProps> = ({ slug }) => {
+const Project: NextPageWithLayout = ({ slug }: any) => {
   const { data, isLoading, isSuccess } = useRepo(slug);
   const render = () => {
     if (isLoading) return <div>Loading...</div>;
@@ -25,12 +23,7 @@ const Project: NextPage<IProps> = ({ slug }) => {
         </main>
       );
   };
-  return (
-    <div className="bg-slate-900 flex justify-center">
-      <MainMask />
-      {render()}
-    </div>
-  );
+  return <>{render()}</>;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -58,6 +51,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
       dehydratedState: dehydrate(queryClient),
     },
   };
+};
+
+Project.getLayout = (page: ReactElement) => {
+  return <Layout isProject>{page}</Layout>;
 };
 
 export default Project;

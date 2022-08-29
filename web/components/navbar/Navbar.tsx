@@ -1,27 +1,6 @@
-import { Dialog } from "@headlessui/react";
 import { useState } from "react";
-import Link from "next/link";
 import MenuIcon from "./MenuIcon";
-import SocialLinks from "../social/SocialLinks";
-
-interface INavbarItem {
-  title: string;
-  route: string;
-}
-const navbarItems = [
-  { title: "Home", route: "/" },
-  { title: "About Me", route: "/about" },
-  { title: "Projects", route: "/projects" },
-  { title: "Contact Me", route: "/contact" },
-  { title: "Blog", route: "/blog" },
-];
-
-const socialLinks = {
-  instagram: "/",
-  github: "/",
-  linkedin: "/",
-  email: "/",
-};
+import Menu from "./Menu";
 
 const Navbar = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -32,57 +11,62 @@ const Navbar = () => {
         onClick={() => setIsShowing((isShowing) => !isShowing)}
         className={`${
           isShowing && "hidden"
-        } absolute top-[2%] right-[4%] md:p-3 rounded-xl z-10`}
+        } absolute top-0 right-2 md:p-3 z-10`}
       >
-        <MenuIcon isShowing={isShowing} setIsShowing={setIsShowing} />
-      </div>
-      <Dialog open={isShowing} onClose={() => setIsShowing(false)}>
-        <div
-          className="fixed inset-0 bg-slate-800/80 backdrop-blur"
-          aria-hidden="true"
-        />
-        <Dialog.Panel>
-          <div className="z-50 fixed top-[1.5%] right-[3%] w-2/3 lg:w-1/4 xl:w-1/5 py-3 flex flex-col items-start  bg-slate-900/70 rounded-md">
-            <div
-              onClick={() => setIsShowing((prev) => !prev)}
-              className="absolute right-[3%] top-[3%]"
-            >
-              <svg
-                className="fill-slate-100 w-7 h-7"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
+        <div className="">
+          <svg
+            width="60px"
+            height="60px"
+            viewBox="0 0 72 72"
+            id="emoji"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="color" />
+            <g id="hair" />
+            <g id="skin" />
+            <g id="skin-shadow" />
+            <g id="line">
+              <line
+                x1="16"
+                x2="56"
+                y1="26"
+                y2="26"
+                fill="none"
+                stroke="white"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            <div className="w-full px-6 tracking-wider flex flex-col justify-around text-xl ">
-              {navbarItems.map((item: INavbarItem) => (
-                <div key={item.title} className="py-1">
-                  <div>
-                    <div
-                      className="max-w-fit"
-                      onClick={() => setIsShowing((isShowing) => !isShowing)}
-                    >
-                      <Link
-                        className="focus:outline-none focus:shadow-none"
-                        href={item.route}
-                      >
-                        {item.title}
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              <SocialLinks {...socialLinks} />
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+                strokeMiterlimit="10"
+                strokeWidth="2"
+              />
+              <line
+                x1="16"
+                x2="56"
+                y1="36"
+                y2="36"
+                fill="none"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                strokeWidth="2"
+              />
+              <line
+                x1="16"
+                x2="56"
+                y1="46"
+                y2="46"
+                fill="none"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                strokeWidth="2"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <Menu isShowing={isShowing} setIsShowing={setIsShowing} />
     </div>
   );
 };

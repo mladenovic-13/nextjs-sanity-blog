@@ -12,7 +12,7 @@ interface SidebarProps {
 
 const queryClient = new QueryClient();
 
-const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
+const BlogSidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
   // Get slug for focusing active page on sidebar list
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(
@@ -118,7 +118,7 @@ const Sidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
 export default function Wraped(props: any) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Sidebar {...props} />
+      <BlogSidebar {...props} />
     </QueryClientProvider>
   );
 }

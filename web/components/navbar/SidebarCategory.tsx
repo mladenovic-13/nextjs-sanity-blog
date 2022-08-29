@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { FC } from "react";
 
 interface CategoryProps {
-  isOpen: boolean;
+  isOpen?: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setIsSidebarOpen?: React.Dispatch<React.SetStateAction<boolean>>;
   title: string;

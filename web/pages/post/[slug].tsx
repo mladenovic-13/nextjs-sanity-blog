@@ -16,15 +16,13 @@ const Post: NextPageWithLayout = ({ slug }: any) => {
     if (error) return <div>Error</div>;
     if (isSuccess)
       return (
-        <div className="">
-          <main className="prose prose-invert prose-img:rounded-xl">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: md().render(data.content || ""),
-              }}
-            />
-          </main>
-        </div>
+        <main className="prose prose-invert prose-img:rounded-xl">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: md().render(data.content || ""),
+            }}
+          />
+        </main>
       );
   };
   return <>{render()}</>;
@@ -58,6 +56,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 Post.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <Layout isPost>{page}</Layout>;
 };
 export default Post;
