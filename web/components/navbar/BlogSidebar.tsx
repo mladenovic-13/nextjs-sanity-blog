@@ -65,7 +65,7 @@ const BlogSidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
 
   return (
     <div
-      className="z-30 fixed w-64 px-5 py-3 lg:py-3 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
+      className="border-slate-600/20 border-r-[2px] z-30 fixed w-64 px-5 py-3 lg:py-3 inset-0  bg-slate-900 overflow-y-auto scrollbar-thin scrollbar-sm scrollbar-thumb-slate-500 scrollbar-track-slate-800
     lg:w-60 lg:relative lg:h-full lg:scrollbar-thumb-slate-500
     "
     >

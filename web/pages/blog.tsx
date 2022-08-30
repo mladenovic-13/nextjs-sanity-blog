@@ -2,28 +2,24 @@ import React, { ReactElement, ReactNode } from "react";
 import { fetchPosts, usePosts } from "../hooks/posts";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import MainMask from "../components/mask/MainMask";
-import BlogPostCard from "../components/cards/BlogPostCard";
 import { NextPageWithLayout } from "./_app";
-import MainLayout from "../components/layout/IndexLayout";
-import Projects from "./projects";
+import BlogPostCardV2 from "../components/cards/BlogPostCardV2";
+import Layout from "../components/layout/Layout";
+import Link from "next/link";
 
 const Blog: NextPageWithLayout = () => {
   const { data } = usePosts();
 
   return (
-    <div className="w-full min-h-screen py-12 lg:py-16 bg-slate-900">
+    <div className="pb-24 w-full h-fit py-3 bg-slate-900">
       <MainMask />
-      <h1 className="section__heading mb-6">Blog Posts</h1>
-      <div
-        className="w-full flex items-center gap-6 flex-col 
-                   lg:w-[95%] lg:flex-row lg:flex-wrap lg:justify-center lg:mx-auto"
-      >
+      <div className="w-full flex-col lg:flex-row flex flex-wrap center gap-5">
         {data?.map((post) => (
-          <div className=" w-[80%] h-52 lg:w-[30%] lg:h-52" key={post.title}>
-            {/* <BlogPostCard
-              
-            /> */}
-          </div>
+          <Link key={post.title} href={`/post/${post.slug}`}>
+            <div className="cursor-pointer w-5/6 lg:w-[32%] h-56 ">
+              <BlogPostCardV2 {...post} />
+            </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -43,7 +39,7 @@ export const getStaticProps = async () => {
   };
 };
 Blog.getLayout = (page: ReactElement) => {
-  return <MainLayout>{page}</MainLayout>;
+  return <Layout isPost>{page}</Layout>;
 };
 
 export default Blog;

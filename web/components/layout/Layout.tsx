@@ -42,7 +42,7 @@ const Layout: React.FC<ILayout> = ({ children, isPost, isProject }) => {
           {isProject && <ProjectSidebar isDesktop />}
         </div>
 
-        <div className="p-3 lg:inline-block lg:p-16">{children}</div>
+        <div className=" p-3 lg:inline-block lg:p-16">{children}</div>
       </div>
     </div>
   );

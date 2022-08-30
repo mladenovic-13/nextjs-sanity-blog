@@ -16,9 +16,7 @@ const useRepo = (repo: string) => {
   return useQuery<GithubRepo>(["repo", repo], () => fetchRepo(repo));
 };
 const useRepos = () => {
-  return useQuery<GithubRepo[]>(["repos"], () => fetchRepos(), {
-    staleTime: Infinity,
-  });
+  return useQuery<GithubRepo[]>(["repos"], () => fetchRepos());
 };
 const usePinnedRepos = () => {
   return useQuery<GithubRepo[]>(["repos"], () => fetchPinedRepos());

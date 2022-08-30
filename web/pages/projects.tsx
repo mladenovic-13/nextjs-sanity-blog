@@ -1,6 +1,5 @@
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { GetStaticProps, NextPage } from "next";
-import Link from "next/link";
 import React, { ReactElement } from "react";
 import ProjectCard from "../components/cards/ProjectCard";
 import MainLayout from "../components/layout/IndexLayout";
@@ -38,9 +37,7 @@ const Projects: NextPageWithLayout = () => {
 
 const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
-  queryClient.prefetchQuery(["repos"], () => fetchRepos(), {
-    staleTime: Infinity,
-  });
+  queryClient.prefetchQuery(["repos"], () => fetchRepos());
 
   return {
     props: {
