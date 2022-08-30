@@ -57,7 +57,6 @@ const BlogSidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
     categorizedPosts.JavaScript.forEach((post) => {
       if (post.slug === currentPage) {
         setIsJsOpen(true);
-        console.log("***");
         return;
       }
     });
