@@ -70,3 +70,18 @@ export const postsData = {
     },
   ],
 };
+
+export const socialLinks = {
+  instagram: "/",
+  github: "/",
+  linkedin: "/",
+  email: "/",
+};
+
+export const navbarItems = [
+  { title: "Home", route: "/" },
+  { title: "About Me", route: "/about" },
+  { title: "Projects", route: "/projects" },
+  { title: "Contact Me", route: "/contact" },
+  { title: "Blog", route: "/blog" },
+];

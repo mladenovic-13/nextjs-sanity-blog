@@ -1,19 +1,25 @@
 import React, { ReactNode } from "react";
+import Contact from "../components/forms/Contact";
 import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
+import SocialLinks from "../components/social/SocialLinks";
 import { NextPageWithLayout } from "./_app";
+import { socialLinks } from "../utils/data";
 
-const Contact: NextPageWithLayout = () => {
+const ContactPage: NextPageWithLayout = () => {
   return (
-    <div className="bg-slate-900 min-h-screen">
+    <div className="center h-screen bg-slate-900">
       <MainMask />
-      <div className="py-16">Contact Page</div>
+      <div className="flex flex-col justify-evenly items-center w-5/6 h-[90%]">
+        <Contact />
+        <SocialLinks {...socialLinks} />
+      </div>
     </div>
   );
 };
 
-Contact.getLayout = (page: ReactNode) => {
+ContactPage.getLayout = (page: ReactNode) => {
   return <MainLayout>{page}</MainLayout>;
 };
 
-export default Contact;
+export default ContactPage;

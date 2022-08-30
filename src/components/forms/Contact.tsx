@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col justify-evenly w-[80%] h-[90%] md:max-w-xl">
+    <div className="flex flex-col w-full h-full md:max-w-xl">
       <h2 className="text-3xl text-center font-semibold">Contact me</h2>
       <p className="text-center text-lg font-light">
         I’m interested in freelance opportunities – especially ambitious or

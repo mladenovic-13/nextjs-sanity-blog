@@ -1,6 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import Link from "next/link";
 import React, { Dispatch, FC, SetStateAction } from "react";
+import { navbarItems, socialLinks } from "../../utils/data";
 import SocialLinks from "../social/SocialLinks";
 
 interface IMenu {
@@ -12,20 +13,6 @@ interface INavbarItem {
   title: string;
   route: string;
 }
-const navbarItems = [
-  { title: "Home", route: "/" },
-  { title: "About Me", route: "/about" },
-  { title: "Projects", route: "/projects" },
-  { title: "Contact Me", route: "/contact" },
-  { title: "Blog", route: "/blog" },
-];
-
-const socialLinks = {
-  instagram: "/",
-  github: "/",
-  linkedin: "/",
-  email: "/",
-};
 
 const Menu: FC<IMenu> = ({ isShowing, setIsShowing }) => {
   return (

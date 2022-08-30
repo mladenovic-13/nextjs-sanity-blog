@@ -7,7 +7,9 @@ import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
+import SocialLinks from "../components/social/SocialLinks";
 import useOnScreen from "../hooks/useOnScreen";
+import { socialLinks } from "../utils/data";
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
@@ -54,7 +56,10 @@ const Home: NextPageWithLayout = () => {
         {/* Section */}
         <div ref={refContactSection} className="section">
           <MainMask />
-          <Contact />
+          <div className="flex flex-col justify-evenly items-center w-5/6 h-[90%]">
+            <Contact />
+            <SocialLinks {...socialLinks} />
+          </div>
         </div>
       </div>
 

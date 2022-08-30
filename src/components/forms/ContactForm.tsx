@@ -6,7 +6,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="form__container" onSubmit={(e) => onSubmit(e)}>
+    <form className="form__container h-full" onSubmit={(e) => onSubmit(e)}>
       <input
         className="form__input"
         type="text"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BlogPostCard from "../cards/BlogPostCard";
 import { Tab } from "@headlessui/react";
-import { postsData } from "../../utils/postsData";
+import { postsData } from "../../utils/data";
 import Link from "next/link";
 
 const PostsList = () => {
