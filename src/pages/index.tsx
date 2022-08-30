@@ -42,7 +42,7 @@ const Home: NextPageWithLayout = () => {
         {/* Section */}
         <div ref={refProjectsSection} className="section">
           <MainMask />
-          <ProjectList />
+          {/* <ProjectList /> */}
         </div>
 
         {/* Section */}
