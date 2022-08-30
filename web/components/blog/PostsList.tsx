@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlogPostCard from "../cards/BlogPostCard";
 import { Tab } from "@headlessui/react";
 import { postsData } from "../../utils/postsData";
+import Link from "next/link";
 
 const PostsList = () => {
   let [categories] = useState(postsData);
@@ -45,7 +46,9 @@ const PostsList = () => {
           ))}
         </Tab.Panels>
       </Tab.Group>
-      <p className="view__more">View More &gt;</p>
+      <Link href="/blog">
+        <p className="view__more">View More &gt;</p>
+      </Link>
     </div>
   );
 };

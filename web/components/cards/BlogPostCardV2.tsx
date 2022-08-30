@@ -1,29 +1,10 @@
 import React from "react";
 
-// "title": "Binarno drvo pretrage (BST)",
-// "author": "Nikola Mladenovic",
-// "category": "CS",
-// "date": "2022-03-13",
-// "bannerImage": "https://img.freepik.com/vecteurs-premium/abstrait-blanc-dans-style-papier-3d_23-2148390818.jpg?w=2000",
-// "tags": [
-// "Computer sscience",
-// "Data Structures"
-// ],
-// "slug": "cs-binarno-drvo-pretrage-bst"
-
-const BlogPostCardV2 = ({
-  author,
-  bannerImage,
-  category,
-  date,
-  slug,
-  tags,
-  title,
-}: Frontmatter) => {
+const BlogPostCardV2 = ({ author, date, tags, title }: Frontmatter) => {
   return (
     <div className="relative p-3 backdrop-blur  min-w-fit w-full h-full min-h-fit  rounded-lg bg-slate-800/70 shadow-md shadow-slate-300/5">
       <div className="h-full flex flex-col justify-between">
-        <h2 className="font-semibold text-lg">{title}</h2>
+        <h2 className="w-[80%] font-semibold text-lg">{title}</h2>
         <ul className="list-disc">
           <h3 className="font-semibold">Tags:</h3>
           <div className="px-6">

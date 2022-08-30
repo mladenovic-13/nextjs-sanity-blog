@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Link from "next/link";
 import React from "react";
 import { usePinnedRepos } from "../../hooks/githubRepos";
 import ProjectCard from "../cards/ProjectCard";
@@ -18,12 +19,15 @@ const ProjectList = () => {
             <ProjectCard
               key={index}
               title={card.name}
-              desc={card.description || ""}
+              desc={card.description || "No description."}
               demoLink={card.homepageUrl || ""}
               githubLink={card.url}
+              stack={["No stack."]}
             />
           ))}
-          <p className="view__more mb-2">View More &gt;</p>
+          <Link href="/projects">
+            <p className="view__more mb-2">View More &gt;</p>
+          </Link>
         </div>
       </div>
 
@@ -46,7 +50,9 @@ const ProjectList = () => {
             </div>
           ))}
         </div>
-        <p className="view__more s">View More &gt;</p>
+        <Link href="/projects">
+          <p className="view__more">View More &gt;</p>
+        </Link>
       </div>
     </>
   );
