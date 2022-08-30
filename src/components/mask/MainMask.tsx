@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import maskImg from "../../public/images/bg-img-small.png";
+import maskImg from "../../../public/images/bg-img-small.png";
 
 interface MaskProps {
   rotate?: boolean;
