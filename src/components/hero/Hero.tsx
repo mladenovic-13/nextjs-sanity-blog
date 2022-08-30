@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import CTA from "../buttons/CTA";
-import heroImg from "../../public/icons/hero.png";
+import heroImg from "../../../public/icons/hero.png";
 
 const Hero = () => {
   return (
