@@ -44,14 +44,14 @@ const AboutMe: NextPageWithLayout = () => {
           </div>
           <div className="w-1/2">
             <p className="indent-6">
-              First and foremost, I love writing code. Ever since I writing my
-              first program in C and manipulating it to produce a desirable
-              output, I have been obsessed with idea of using software to solve
-              real world problems. This is one of many reasons that I decided to
-              study Computer Science on Belgrade University.
+              First and foremost, I love writing code. Ever since I wrote my
+              first program in C and manipulated it to produce a desirable
+              output, I have been obsessed with the idea of using software to
+              solve real-world problems. This is one of many reasons I decided
+              to study Computer Science at Belgrade University.
             </p>
             <p className="indent-6 ">
-              Over time I realized that university courses isn&apos;t enough and
+              Over time I realized that university courses aren&#39;t enough and
               I started digging deeper into the digital world. I was fascinated
               by Digital Marketing, some e-commerce business models, content
               writing et cetera, but I always went back to my first love,
@@ -77,31 +77,31 @@ const AboutMe: NextPageWithLayout = () => {
           </h2>
         </div>
         <p className="indent-6 font-light">
-          First and foremost, I love writing code. Ever since I writing my first
-          program in C and manipulating it to produce a desirable output, I have
-          been obsessed with idea of using software to solve real world
-          problems. This is one of many reasons that I decided to study Computer
-          Science on Belgrade University.
+          First and foremost, I love writing code. Ever since I wrote my first
+          program in C and manipulated it to produce a desirable output, I have
+          been obsessed with the idea of using software to solve real-world
+          problems. This is one of many reasons I decided to study Computer
+          Science at Belgrade University.
         </p>
         <p className="indent-6 font-light">
-          Over time I realized that university courses isn&apos;t enough and I
+          Over time I realized that university courses aren&#39;t enough and I
           started digging deeper into the digital world. I was fascinated by
           Digital Marketing, some e-commerce business models, content writing et
           cetera, but I always went back to my first love, coding.
         </p>
         <ul className="flex w-5/6">
           <div className="flex-1">
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>NodeJS</li>
             <li>NextJS</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>TailwindCSS</li>
+            <li>NodeJS</li>
           </div>
           <div className="flex-1">
-            <li>TailwindCSS</li>
+            <li>SQL</li>
             <li>C/C++</li>
             <li>MongoDB/Firestore</li>
-            <li>SQL</li>
+            <li>HTML/CSS</li>
           </div>
         </ul>
         <SocialLinks {...socialLinks} />

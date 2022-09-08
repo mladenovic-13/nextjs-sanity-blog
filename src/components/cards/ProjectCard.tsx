@@ -35,7 +35,13 @@ const ProjectCard = ({
               </svg>
             </Link>
             {demoLink && (
-              <Link href={"https://" + demoLink}>
+              <Link
+                href={
+                  demoLink.search("https://") < 0
+                    ? "https://" + demoLink
+                    : demoLink
+                }
+              >
                 <svg
                   className="w-4 fill-white"
                   xmlns="http://www.w3.org/2000/svg"
