@@ -35,21 +35,26 @@ const ProjectSidebar: FC<IProjectSidebar> = ({
         <div className="pb-4 tracking-wider font-bold">My Projects</div>
         <div className="transition ease-in-out duration-1000 border-l-[1px] border-slate-400/10">
           <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
-            {data?.map((project) => (
-              <div
-                onClick={() => {
-                  setIsSidebarOpen &&
-                    setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
-                }}
-                key={project.name}
-                className={`${
-                  currentProject === project.name &&
-                  "border-l-2 text-primary-300 font-semibold"
-                } -ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer`}
-              >
-                <Link href={`/project/${project.name}`}>{project.name}</Link>
-              </div>
-            ))}
+            {data?.map(
+              (project) =>
+                !project.isPrivate && (
+                  <div
+                    onClick={() => {
+                      setIsSidebarOpen &&
+                        setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
+                    }}
+                    key={project.name}
+                    className={`${
+                      currentProject === project.name &&
+                      "border-l-2 text-primary-300 font-semibold"
+                    } -ml-[1.5px] px-3 w-full hover:border-l-[1px] hover:text-primary-300 border-primary-300 cursor-pointer`}
+                  >
+                    <Link href={`/project/${project.name}`}>
+                      {project.name}
+                    </Link>
+                  </div>
+                )
+            )}
           </div>
         </div>
       </div>
