@@ -43,14 +43,12 @@ const BlogSidebar = ({ setIsSidebarOpen, isDesktop }: SidebarProps) => {
     categorizedPosts.CSS.forEach((post) => {
       if (post.slug === currentPage) {
         setIsCssOpen(true);
-        console.log("***");
         return;
       }
     });
     categorizedPosts["Computer Science"].forEach((post) => {
       if (post.slug === currentPage) {
         setIsCsOpen(true);
-        console.log("***");
         return;
       }
     });
