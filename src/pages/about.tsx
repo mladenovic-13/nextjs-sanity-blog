@@ -9,12 +9,12 @@ import { socialLinks } from "../utils/data";
 
 const AboutMe: NextPageWithLayout = () => {
   return (
-    <div className="flex py-4 lg:py-16 bg-slate-900 pb-12 min-h-screen justify-center">
+    <div className=" flex flex-col items-center gap-20 lg:gap-28  py-4 lg:py-16 bg-slate-900 pb-12 min-h-screen justify-center">
       <MainMask />
-      <div className="hidden lg:flex max-w-4xl justify-center items-center">
-        <h1 className="text-2xl font-light text-center">About Me</h1>
-        <div className="flex w-full">
-          <div className="w-1/2 flex flex-col justify-center items-center">
+      <div className="hidden lg:flex gap-12 flex-col max-w-4xl">
+        <h1 className="section__heading">About Me</h1>
+        <div className="flex gap-10 w-full">
+          <div className="w-1/2 flex gap-10 flex-col justify-center items-center">
             <div>
               <div className="z-40 flex flex-col justify-center items-center  relative rounded-full w-40 h-40 border-4 border-slate-600/50">
                 <Image
@@ -42,15 +42,15 @@ const AboutMe: NextPageWithLayout = () => {
               </div>
             </ul>
           </div>
-          <div className="w-1/2">
-            <p className="indent-6">
+          <div className="w-1/2 flex flex-col gap-10">
+            <p className="indent-6 text-lg">
               First and foremost, I love writing code. Ever since I wrote my
               first program in C and manipulated it to produce a desirable
               output, I have been obsessed with the idea of using software to
               solve real-world problems. This is one of many reasons I decided
               to study Computer Science at Belgrade University.
             </p>
-            <p className="indent-6 ">
+            <p className="indent-6 text-lg">
               Over time I realized that university courses aren&#39;t enough and
               I started digging deeper into the digital world. I was fascinated
               by Digital Marketing, some e-commerce business models, content
@@ -104,6 +104,8 @@ const AboutMe: NextPageWithLayout = () => {
             <li>HTML/CSS</li>
           </div>
         </ul>
+      </div>
+      <div className="w-[80%] lg:w-[60%]">
         <SocialLinks {...socialLinks} />
       </div>
     </div>

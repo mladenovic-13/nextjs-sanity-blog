@@ -38,7 +38,7 @@ const ProjectList = () => {
         </h1>
         <div className="flex flex-row flex-wrap flex-1 justify-center gap-4">
           {data?.map((card, index) => (
-            <div key={index} className="w-[30%] h-[47%]">
+            <div key={index} className="w-[30%] h-[45%]">
               <ProjectCard
                 key={index}
                 title={card.name}

@@ -15,21 +15,23 @@ const Projects: NextPageWithLayout = () => {
       <MainMask />
       <h1 className="section__heading mb-6">Projects</h1>
       <div
-        className="w-full flex items-center gap-6 flex-col 
-                   lg:w-[95%] lg:flex-row lg:flex-wrap lg:justify-center lg:mx-auto"
+        className="w-full flex items-center gap-6 lg:gap-10 flex-col 
+                   lg:w-[90%] lg:flex-row lg:flex-wrap lg:justify-center lg:mx-auto"
       >
-        {data?.map((project) => (
-          <div className=" w-[80%] h-52 lg:w-[30%] lg:h-52" key={project.name}>
-            <ProjectCard
-              isProjectPage
-              title={project.name}
-              desc={project.description || "No Description"}
-              demoLink={project.homepageUrl || ""}
-              githubLink={project.url}
-              stack={["No stack"]}
-            />
-          </div>
-        ))}
+        {data
+          ?.map((project) => (
+            <div className=" w-[80%] h-52 lg:w-[30%]" key={project.name}>
+              <ProjectCard
+                isProjectPage
+                title={project.name}
+                desc={project.description || "No Description"}
+                demoLink={project.homepageUrl || ""}
+                githubLink={project.url}
+                stack={["No stack"]}
+              />
+            </div>
+          ))
+          .reverse()}
       </div>
     </div>
   );
