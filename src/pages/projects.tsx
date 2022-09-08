@@ -74,7 +74,7 @@ const Projects: NextPageWithLayout = () => {
                   <p className="w-4/5 text-lg text-center">
                     {project.description || "No description."}
                   </p>
-                  <ul className="w-3/5 flex flex-row gap-3 text-slate-400/60">
+                  <ul className="w-4/5 flex flex-row flex-wrap justify-center gap-3 text-slate-400/60">
                     {project.repositoryTopics.nodes.map((topic) => (
                       <li key={topic.topic.name} className="min-w-fit">
                         {topic.topic.name}
