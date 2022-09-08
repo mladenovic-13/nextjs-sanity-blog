@@ -105,7 +105,7 @@ const AboutMe: NextPageWithLayout = () => {
           </div>
         </ul>
       </div>
-      <div className="w-[80%] lg:w-[60%]">
+      <div className="w-[80%] lg:w-[80%]">
         <SocialLinks {...socialLinks} />
       </div>
     </div>

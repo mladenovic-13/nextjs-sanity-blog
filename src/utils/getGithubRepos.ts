@@ -27,6 +27,13 @@ export const getAllGithubRepos = async () => {
               homepageUrl
               openGraphImageUrl
               isPrivate
+              repositoryTopics(first:10) {
+                nodes{
+                  topic {
+                    name
+                  }
+                }
+              }
             }
           }
         }

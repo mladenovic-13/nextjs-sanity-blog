@@ -8,7 +8,7 @@ import { socialLinks } from "../utils/data";
 
 const ContactPage: NextPageWithLayout = () => {
   return (
-    <div className="center h-screen bg-slate-900">
+    <div className="lg:py-6 center h-screen bg-slate-900">
       <MainMask />
       <div className="flex flex-col justify-evenly items-center w-5/6 h-[90%]">
         <Contact />

@@ -18,4 +18,13 @@ type GithubRepo = {
   };
   openGraphImageUrl?: string;
   isPrivate: boolean;
+  repositoryTopics: {
+    nodes: [
+      {
+        topic: {
+          name: string;
+        };
+      }
+    ];
+  };
 };
