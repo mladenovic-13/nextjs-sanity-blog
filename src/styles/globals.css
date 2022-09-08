@@ -61,6 +61,6 @@
   }
 
   .view__more {
-    @apply underline underline-offset-8  font-light tracking-widest text-center animate-bounce;
+    @apply cursor-pointer underline underline-offset-8  font-light tracking-widest text-center animate-bounce;
   }
 }
