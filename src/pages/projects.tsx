@@ -15,13 +15,19 @@ const Projects: NextPageWithLayout = () => {
       <MainMask />
       <h1 className="section__heading mb-6">Projects</h1>
       <div
-        className="w-full flex items-center gap-6 lg:gap-10 flex-col 
+        className="w-full flex items-center gap-6 lg:gap-4 flex-col 
                    lg:w-[90%] lg:flex-row lg:flex-wrap lg:justify-center lg:mx-auto"
       >
         {data
           ?.map((project) => (
-            <div className=" w-[80%] h-52 lg:w-[30%]" key={project.name}>
+            <div
+              className={` w-[90%] h-64 lg:w-[30%] ${
+                project.isPrivate && "hidden"
+              }`}
+              key={project.name}
+            >
               <ProjectCard
+                openGraphImageUrl={project.openGraphImageUrl || null}
                 isProjectPage
                 title={project.name}
                 desc={project.description || "No Description"}

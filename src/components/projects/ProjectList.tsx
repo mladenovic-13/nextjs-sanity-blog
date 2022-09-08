@@ -17,6 +17,7 @@ const ProjectList = () => {
           <h2 className="section__heading">projects</h2>
           {data?.slice(0, 3).map((card, index) => (
             <ProjectCard
+              openGraphImageUrl={card.openGraphImageUrl || null}
               key={index}
               title={card.name}
               desc={card.description || "No description."}
@@ -40,6 +41,7 @@ const ProjectList = () => {
           {data?.map((card, index) => (
             <div key={index} className="w-[30%] h-[45%]">
               <ProjectCard
+                openGraphImageUrl={card.openGraphImageUrl || null}
                 key={index}
                 title={card.name}
                 desc={card.description || "No description."}

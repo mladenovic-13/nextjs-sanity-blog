@@ -25,6 +25,8 @@ export const getAllGithubRepos = async () => {
               createdAt
               url
               homepageUrl
+              openGraphImageUrl
+              isPrivate
             }
           }
         }
@@ -49,6 +51,7 @@ export const getPinnedGithubRepos = async () => {
               }
               url
               homepageUrl
+              openGraphImageUrl
             }
           }
         }

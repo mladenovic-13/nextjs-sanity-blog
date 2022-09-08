@@ -16,7 +16,7 @@ const Post: NextPageWithLayout = ({ slug }: any) => {
     if (error) return <div>Error</div>;
     if (isSuccess)
       return (
-        <main className="prose prose-invert prose-img:rounded-xl ">
+        <main className="prose prose-invert prose-img:rounded-xl lg:max-w-4xl">
           <div
             dangerouslySetInnerHTML={{
               __html: md().render(data.content || ""),

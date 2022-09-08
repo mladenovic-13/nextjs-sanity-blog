@@ -16,4 +16,6 @@ type GithubRepo = {
   object?: {
     text: string;
   };
+  openGraphImageUrl?: string;
+  isPrivate: boolean;
 };

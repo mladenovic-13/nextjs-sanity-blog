@@ -48,7 +48,7 @@ const Project: NextPageWithLayout = ({ slug }: any) => {
               </div>
             </Link>
           </div>
-          <main className="prose prose-invert prose-img:rounded-xl">
+          <main className="prose prose-invert prose-img:rounded-xl lg:max-w-4xl">
             <div
               dangerouslySetInnerHTML={{
                 __html: md().render(data.object?.text || ""),

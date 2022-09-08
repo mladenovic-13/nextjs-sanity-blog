@@ -5,4 +5,5 @@ interface ProjectCardProps {
   githubLink: string;
   demoLink: string;
   isProjectPage?: boolean;
+  openGraphImageUrl: string | null;
 }
