@@ -84,10 +84,10 @@ const AboutMe: NextPageWithLayout = () => {
           Science at Belgrade University.
         </p>
         <p className="indent-6 font-light">
-          Over time I realized that university courses aren&#39;t enough and I
+          Over time I realized that university courses aren&apos;t enough, and I
           started digging deeper into the digital world. I was fascinated by
-          Digital Marketing, some e-commerce business models, content writing et
-          cetera, but I always went back to my first love, coding.
+          Digital Marketing, some e-commerce business models, content writing,
+          et cetera, but I always went back to my first love, coding.
         </p>
         <ul className="flex w-5/6">
           <div className="flex-1">

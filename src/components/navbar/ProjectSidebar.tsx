@@ -37,7 +37,8 @@ const ProjectSidebar: FC<IProjectSidebar> = ({
           <div className="flex flex-col lg:text-xs space-y-4 w-full h-full text-slate-500 font-light lg:font-medium">
             {data?.map(
               (project) =>
-                !project.isPrivate && (
+                !project.isPrivate &&
+                project.name !== "mladenovic-13" && (
                   <div
                     onClick={() => {
                       setIsSidebarOpen &&

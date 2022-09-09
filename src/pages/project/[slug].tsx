@@ -17,7 +17,7 @@ const Project: NextPageWithLayout = ({ slug }: any) => {
         <div>
           <div className="pb-6 flex gap-4">
             {data.homepageUrl && (
-              <Link href={"https://" + data.homepageUrl}>
+              <Link href={data.homepageUrl}>
                 <div className="cursor-pointer flex gap-2 items-center text-slate-50 bg-primary-300/90 py-[6px] px-2 rounded-md font-semibold text-sm tracking-wide">
                   <span>Demo</span>
                   <span>

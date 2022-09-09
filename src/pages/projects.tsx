@@ -51,7 +51,8 @@ const Projects: NextPageWithLayout = () => {
             <Link key={project.name} href={`/project/${project.name}`}>
               <div
                 className={`hover:scale-[1.03] transition duration-300 ease-in-out cursor-pointer flex p-6 flex-row w-full border-y-[1px] border-slate-300/20 ${
-                  project.isPrivate && "hidden"
+                  (project.isPrivate || project.name === "mladenovic-13") &&
+                  "hidden"
                 }`}
               >
                 <div className="flex-1">
@@ -94,13 +95,7 @@ const Projects: NextPageWithLayout = () => {
                     </svg>
                   </Link>
                   {project.homepageUrl && (
-                    <Link
-                      href={
-                        project.homepageUrl.search("https://") < 0
-                          ? "https://" + project.homepageUrl
-                          : project.homepageUrl
-                      }
-                    >
+                    <Link href={project.homepageUrl}>
                       <svg
                         className="w-6 fill-white cursor-pointer"
                         xmlns="http://www.w3.org/2000/svg"
