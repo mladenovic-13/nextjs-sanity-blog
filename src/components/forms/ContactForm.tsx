@@ -1,12 +1,29 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, MutableRefObject, useRef } from "react";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
+  const form = useRef() as MutableRefObject<HTMLFormElement>;
+
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => console.log("Form is sent"))
+      .catch((error) => console.log(error));
   };
 
   return (
-    <form className="form__container h-full" onSubmit={(e) => onSubmit(e)}>
+    <form
+      ref={form}
+      className="form__container h-full"
+      onSubmit={(e) => onSubmit(e)}
+    >
       <input
         className="form__input"
         type="text"
