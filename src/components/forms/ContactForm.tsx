@@ -1,5 +1,5 @@
 import React, { FormEvent, MutableRefObject, useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const form = useRef() as MutableRefObject<HTMLFormElement>;
