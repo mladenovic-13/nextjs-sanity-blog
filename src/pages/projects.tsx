@@ -27,7 +27,8 @@ const Projects: NextPageWithLayout = () => {
           ?.map((project) => (
             <div
               className={` w-[90%] h-64 lg:w-[30%] ${
-                project.isPrivate && "hidden"
+                (project.isPrivate || project.name === "mladenovic-13") &&
+                "hidden"
               }`}
               key={project.name}
             >
