@@ -75,7 +75,7 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/_mladenovic13_/",
   github: "https://github.com/mladenovic-13",
   linkedin: "https://www.linkedin.com/in/nikola-mladenovic-2355371a0",
-  email: "nikolanik999@gmail.com",
+  email: "mladenovic13.dev@gmail.com",
 };
 
 export const navbarItems = [
