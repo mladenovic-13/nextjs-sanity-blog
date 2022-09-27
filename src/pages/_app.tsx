@@ -30,6 +30,11 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <Head>
           <title>Mladenovic13 - Web Developer</title>
           <link rel="shortcut icon" href="/favicon.png" />
+          <meta
+            name="description"
+            content="Passionate full-stack developer from Serbia.
+In love with problem solving, development, and design."
+          />
         </Head>
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false} />

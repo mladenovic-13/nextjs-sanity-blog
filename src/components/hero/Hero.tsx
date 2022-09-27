@@ -10,17 +10,17 @@ const Hero = () => {
         <div className="flex flex-col justify-evenly  h-[90%] md:justify-start md:gap-[10%]">
           <div className="pl-3 space-y-3 flex flex-col  text-5xl font-extralight tracking-wider md:p-0 md:text-6xl">
             <p>Hi,</p>
-            <p>
+            <h2>
               <span className="font-semibold">I&apos;m </span>Nikola,
-            </p>
-            <p>
+            </h2>
+            <h2>
               Web<span className="font-semibold"> Developer</span>.
-            </p>
+            </h2>
           </div>
           <div className="mt-1">
-            <p className="pl-4 text-2xl font-light  text-gray-400">
+            <h2 className="pl-4 text-2xl font-light  text-gray-400">
               Full-stack Web Developer
-            </p>
+            </h2>
           </div>
           <CTA />
         </div>
