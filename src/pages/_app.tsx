@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Head from "next/head";
+import Meta from "../components/meta/meta";
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -27,15 +28,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Head>
-          <title>Mladenovic13 - Web Developer</title>
-          <link rel="shortcut icon" href="/favicon.png" />
-          <meta
-            name="description"
-            content="Passionate full-stack developer from Serbia.
-In love with problem solving, development, and design."
-          />
-        </Head>
+        <Meta />
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
