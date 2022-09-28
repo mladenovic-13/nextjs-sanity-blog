@@ -1,15 +1,17 @@
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { fetchRepo, fetchRepos, useRepo } from "../../hooks/githubRepos";
 import md from "markdown-it";
 import { NextPageWithLayout } from "../_app";
 import Layout from "../../components/layout/Layout";
 import Link from "next/link";
+import Head from "next/head";
 
 const Project: NextPageWithLayout = ({ slug }: any) => {
   const { data, isLoading, isSuccess } = useRepo(slug);
+
   const render = () => {
     if (isLoading) return <div>Loading...</div>;
     if (isSuccess)
@@ -58,7 +60,18 @@ const Project: NextPageWithLayout = ({ slug }: any) => {
         </div>
       );
   };
-  return <>{render()}</>;
+  return (
+    <>
+      <Head>
+        <title>{data?.name}</title>
+        <meta
+          name="description"
+          content={`${data?.description}, Owner: ${data?.owner.login}`}
+        />
+      </Head>
+      {render()}
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

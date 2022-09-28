@@ -1,8 +1,9 @@
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import md from "markdown-it";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import Layout from "../../components/layout/Layout";
 import { fetchPost, fetchPosts, usePost, usePosts } from "../../hooks/posts";
 import { NextPageWithLayout } from "../_app";
@@ -25,7 +26,19 @@ const Post: NextPageWithLayout = ({ slug }: any) => {
         </main>
       );
   };
-  return <>{render()}</>;
+  return (
+    <>
+      <Head>
+        <meta
+          name="description"
+          content={`${data?.frontmatter.title}, Kategorija: ${
+            data?.frontmatter.category
+          }, Tagovi: ${data?.frontmatter.tags.toString().replace(",", ", ")}`}
+        />
+      </Head>
+      {render()}
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

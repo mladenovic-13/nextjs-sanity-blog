@@ -26,7 +26,12 @@ const Hero = () => {
         </div>
       </div>
       <div className="relative w-full z-50 h-[45%] md:h-4/5 md:absolute md:bottom-0 md:right-0 md:w-3/5">
-        <Image src={heroImg} alt="Hero Image" layout="fill" />
+        <Image
+          priority
+          src={heroImg}
+          alt="Nikola Mladenovic full stack developer from serbia image"
+          layout="fill"
+        />
       </div>
     </div>
   );

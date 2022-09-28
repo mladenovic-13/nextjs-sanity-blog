@@ -8,8 +8,8 @@ const Meta = () => {
       <link rel="shortcut icon" href="/favicon.png" />
       <meta
         name="description"
-        content="Passionate full-stack developer from Serbia.
-In love with problem solving, development, and design."
+        content="Passionate full-stack developer from Serbia, Belgrade.
+In love with problem solving, development, and design. My stack: Next.js, Next-Auth, React, React Query, TailwindCSS etc."
       />
       <meta
         name="keywords"

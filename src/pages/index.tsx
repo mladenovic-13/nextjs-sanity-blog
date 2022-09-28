@@ -5,6 +5,7 @@ import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
 import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
+import Meta from "../components/meta/meta";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import SocialLinks from "../components/social/SocialLinks";
@@ -31,40 +32,43 @@ const Home: NextPageWithLayout = () => {
   ];
 
   return (
-    <div className="main__container">
-      {/* Scroll Container */}
-      <div className="section__container">
-        {/* Section */}
-        <div ref={refHeroSection} className="section">
-          <MainMask />
-          <Hero />
-          <ScrollDown />
-        </div>
+    <>
+      <Meta />
+      <div className="main__container">
+        {/* Scroll Container */}
+        <div className="section__container">
+          {/* Section */}
+          <div ref={refHeroSection} className="section">
+            <MainMask />
+            <Hero />
+            <ScrollDown />
+          </div>
 
-        {/* Section */}
-        <div ref={refProjectsSection} className="section">
-          <MainMask />
-          <ProjectList />
-        </div>
+          {/* Section */}
+          <div ref={refProjectsSection} className="section">
+            <MainMask />
+            <ProjectList />
+          </div>
 
-        {/* Section */}
-        <div ref={refBlogSection} className="section">
-          <MainMask />
-          <PostsList />
-        </div>
+          {/* Section */}
+          <div ref={refBlogSection} className="section">
+            <MainMask />
+            <PostsList />
+          </div>
 
-        {/* Section */}
-        <div ref={refContactSection} className="section">
-          <MainMask />
-          <div className="flex flex-col justify-evenly items-center w-5/6 h-[90%]">
-            <Contact />
-            <SocialLinks {...socialLinks} />
+          {/* Section */}
+          <div ref={refContactSection} className="section">
+            <MainMask />
+            <div className="flex flex-col justify-evenly items-center w-5/6 h-[90%]">
+              <Contact />
+              <SocialLinks {...socialLinks} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <ScrollCounter sections={sectionProps} />
-    </div>
+        <ScrollCounter sections={sectionProps} />
+      </div>
+    </>
   );
 };
 

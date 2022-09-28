@@ -73,6 +73,7 @@ export const getGithubRepo = async (name: string) => {
                   viewer {
                     repository(name: "${name}") {
                       name
+                      description
                       owner {
                         login
                       }
