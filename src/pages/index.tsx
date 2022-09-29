@@ -5,7 +5,6 @@ import Hero from "../components/hero/Hero";
 import ScrollDown from "../components/hero/ScrollDown";
 import MainLayout from "../components/layout/IndexLayout";
 import MainMask from "../components/mask/MainMask";
-import Meta from "../components/meta/meta";
 import ProjectList from "../components/projects/ProjectList";
 import ScrollCounter from "../components/scroll-counter/ScrollCounter";
 import SocialLinks from "../components/social/SocialLinks";
@@ -33,7 +32,6 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <>
-      <Meta />
       <div className="main__container">
         {/* Scroll Container */}
         <div className="section__container">

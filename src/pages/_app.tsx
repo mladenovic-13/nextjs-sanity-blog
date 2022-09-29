@@ -8,7 +8,7 @@ import {
   Hydrate,
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import Head from "next/head";
+import Meta from "../components/meta/meta";
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -27,13 +27,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Head>
-          <link rel="shortcut icon" href="/favicon.png" />
-          <meta
-            name="keywords"
-            content="react programmer, react front end, full stack react, react js developer, front end developer, web developer, website developer, freelance web designer, web developer near me "
-          />
-        </Head>
+        <Meta />
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
